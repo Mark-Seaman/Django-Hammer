@@ -1,0 +1,13 @@
+* Home *
+
+**Users**
+Each registered user has a main directory.   When a user is registered their home page will be cloned from a template.
+
+**Home**
+The user is free to customize their home page and put any content that they wish.
+
+**Installed apps**
+When the user installs another Simple App it is added to their home page.  Installing an app typically clones many documents from the Template for that app.
+
+**Security**
+All pages are private to the owner.  The owner can choose to allow other specific people to view and modify their documents by editing the UserReaders or UserWriters.
