@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    <div style="margin: 6em">
+    <h1>Topics</h1>
+        <ul>
+            {% for f in directory %}
+                <li><a href="{{ f }}">{{ f }}</a></li>
+            {% endfor %}
+        </ul>
+ {% endblock %}

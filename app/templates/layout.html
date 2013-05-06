@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Thumper</title>
+    <link href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet" />
+    <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap.min.js"></script>
+    <style>
+      body {
+         background: #efefef;
+      }
+      
+      div {
+         padding: 1em;
+      }
+
+      div.page {
+         background: #ffffff;
+         -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+         -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+         box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+         padding: 1em;
+         margin: 3em;
+      }
+
+      hr {
+         border:2px solid red;
+      }
+
+    </style>
+</head>
+<body>
+
+{% block user %}
+
+{% endblock %}
+
+{% block banner %}
+    <div>
+
+        <!-- <img src="{{ STATIC_URL }}AppThumper.png" alt="Hammer Rocks!" />-->
+        <h1><span style='color:blue'>app</span> <span style='color:green'>Thumper</span></h1>
+        <hr>
+        {% if user.is_authenticated and user.is_staff %}
+           <div style='float:right'>
+            Logged in as,
+            <strong>{% firstof user.first_name user.username %}</strong>.
+            <!-- <a href="/password_change">Change password</a> -->
+            <a href="/logout">Log out</a>
+            </div>
+        {% endif %}
+
+        {% block navbar %}
+            <p>
+                <a href="/">Home</a>&nbsp;&nbsp;&nbsp;
+                <a href='/{{ title }}/edit'>Edit</a>&nbsp;&nbsp;&nbsp;
+            </p>
+        {% endblock %}
+
+    </div>
+{% endblock %}
+
+<div class='page'>
+  <div style="margin:6em">
+    {% block content %} {% endblock %}
+  </div>
+<div>
+
+</body>
+</html>

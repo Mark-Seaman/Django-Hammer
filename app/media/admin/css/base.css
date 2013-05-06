@@ -1,0 +1,39 @@
+/*
+    DJANGO Admin styles
+*/
+
+.navbar-inner {
+	border-radius: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+#user-tools {
+    position: absolute;
+    top:0;
+    right:0;
+    padding:4px 8px 20px 20px;
+    text-shadow:1px 1px 0 #fff, 0 0 1px #fff, 0 0 2px #fff,0 0 3px #fff;
+    /*background: rgba(255,255,255,0.3);*/
+    /*border-bottom-left-radius: 4px;*/
+}
+#user-tools a, #user-tools a:visited {
+    color:#607;
+}
+
+#content {
+	margin:20px;
+}
+
+tbody th {
+	text-align: right;
+	padding-right: 1em;
+}
+td.message {
+    border-top:none;
+    padding-top:0;
+}
+td.message h4 {
+    font-size: 1em;
+    margin-top: 0;
+}
