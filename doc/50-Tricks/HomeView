@@ -1,14 +1,15 @@
 * Home view *                 -*-muse-*-
 Map each URL to a view
-urls.py 
-from django.conf.urls import patterns,url
+_________________________________ **urls.py**  ______________________________
 
+from django.conf.urls import patterns,url
 urlpatterns = patterns('',
     url(r'^$', 'buymore.views.home_page'),
 )
-views.py 
-from django.http import Http Response
 
+_________________________________ **views.py** ______________________________
+
+from django.http import Http Response
 def home_page(request):
     return Http Response('My Store Contents')
 

@@ -13,11 +13,3 @@ def add_form (request):
         form = NoteForm()
     data =  { 'form': form }
     return render(request, 'add.html', data)
-
-_________________________________ **add.html** ______________________________
-
-<form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
-    <table>{{ form.as_table }}</table>
-    <button type="submit" value="Save">Save</button>
-    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
-</form>

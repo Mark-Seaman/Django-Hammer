@@ -1,7 +1,5 @@
 * Create App *                 -*-muse-*-
-
  $ manage.py startapp buymore
-
  $ tree
     .
     ├── buymore
@@ -15,8 +13,7 @@
         ├── settings.py
         ├── urls.py
         └── wsgi.py
-
-**settings.py**
+_________________________________ **settings.py**  ______________________________
 
 INSTALLED_APPS = (
     'buymore',

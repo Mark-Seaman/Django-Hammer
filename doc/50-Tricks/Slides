@@ -1,25 +1,21 @@
-HomeView
 
-Bridge: Intro
+PresentationGoals
 WhatsDjango
 WhyDjango
 LearnByDoing
-
-Bridge:Tricks
 FiftyTricks
 TrickGroups
 
-Bridge:Server Tricks
-HostYourApp
+Bridge:Server  (5 Tricks)
 ServerStart
 CreateProject
-DeployApp
-HomeView
 HelloWorld
 CreateApp
+HomeView
 
-Bridge:Data Tricks
+Bridge:Data (9 Tricks)
 DataBase
+DataBasePostGres
 NewDataModel
 CreateDatabase
 AddRecord
@@ -28,33 +24,42 @@ QueryRecords
 ShowResults
 DeleteRecord
 
-Bridge:Views Tricks
-Templates
-PassParms
+Bridge:Views (7 Tricks)
+HomeView
+ListViewUrl
+ListView
+DetailsView
 FormModel
 AddRecordView
 EditView
 DeleteView
 
-Bridge:Formatting Tricks
-AppTemplate
-TwitterBootstrap
+Bridge:Formatting (4 Tricks)
+PageLayout
+PageTemplate
 StandardNavigation
 JsSupport
 
-Bridge:Document Tricks
+Bridge:Document (6 Tricks)
 BrowseDirectory
 ReadFile
 WriteFile
-Execute
+ExecuteScript
 TextToHtml
 SearchText
 
-Bridge:Users Tricks
+Bridge:Users (7 Tricks)
 DetailsImage
 AdminInterface
-Login
+UserLogin
 AdminImage
 EditUser
 ListUsers
 EnforcingSecurity
+
+Bridge:Project (5 Tricks)
+TricksInventory
+EstimateCost
+TestDrivenDevelopment
+HostYourApp
+DeployApp

@@ -1,6 +1,11 @@
 * Standard Navigation *                 -*-muse-*-
 Create a reusable menu bar with Twitter Bootstrap
 
+<img src='images/Navigation.png' />
+
+
+
+
 
     <div class="navbar">
       <div class="navbar-inner">

@@ -1,0 +1,33 @@
+* Page Template *                                                     -*-muse-*-
+Every page on your site has the same structure
+
+_________________________________ **page.html** ______________________________
+
+<img src='images/PageTemplate.png' />
+
+
+
+
+
+
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Topics</h1>
+    <ul>
+        {% for f in directory %}
+            <li><a href="{{ f }}">{{ f }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
+
+

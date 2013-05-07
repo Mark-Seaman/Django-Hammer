@@ -2,10 +2,13 @@
 
 Map each URL to a view
 
-**urls.py**
+_________________________________ **urls.py**  ______________________________
+
+from django.http import HttpResponse
+from django.conf.urls import patterns,url
 
 def home_page(request):
-    return HttpResponse('<h1>MyStore</h1><p>Not so cool yet</p>')
+    return HttpResponse('My Store')
 
 urlpatterns = patterns('',
     url(r'^$', home_page),

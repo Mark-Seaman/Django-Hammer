@@ -38,29 +38,18 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
 <slide>
-<pre><h1>Home view</h1>
-Map each URL to a view
-urls.py
-from django.conf.urls import patterns,url
+<pre><h1>Presentation Goals</h1>
 
-urlpatterns = patterns('',
-    url(r'^$', 'buymore.views.home_page'),
-)
-views.py
-from django.http import Http Response
+ * Overview of Django
 
-def home_page(request):
-    return Http Response('My Store Contents')
+ * Fifty Most Useful Tricks
+
+ * Running Web Application
+
+
 
 
 </pre> </slide>
-
-<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
-    <hgroup class="auto-fadein">
-      <h2 class="white"> Intro</h2>
-      <h3 class="white"></h3>
-    </hgroup>
-  </slide>
 
 <slide>
 <pre><h1>What is Django</h1>
@@ -106,25 +95,12 @@ Our project: build a wiki from scratch
 
 </pre> </slide>
 
-<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
-    <hgroup class="auto-fadein">
-      <h2 class="white">Tricks</h2>
-      <h3 class="white"></h3>
-    </hgroup>
-  </slide>
-
 <slide>
 <pre><h1>Fifty Tricks</h1>
 
 <b>Types of Knowledge</b>
-    Engineering
-    Technology - Catalog of tricks
-
-<b>A trick can be ...</b>
-    applied in an hour
-    learned in a day
-
-ProjectEstimation
+Engineering - Definition, Design, Development, Debugging, Testing
+Technology - Catalog of tricks
 
 </pre> </slide>
 
@@ -138,33 +114,16 @@ Views
 Formatting
 Documents
 Users
+Projects
 
 </pre> </slide>
 
 <slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
     <hgroup class="auto-fadein">
-      <h2 class="white">Server Tricks</h2>
+      <h2 class="white">Server  (5 Tricks)</h2>
       <h3 class="white"></h3>
     </hgroup>
   </slide>
-
-<slide>
-<pre><h1>Host Your App</h1>
-First time with take a day
-With experience it takes an hour
-
-<b>Web Faction</b>
-http://webfaction.com
-Specialize in Django
-
-<b>Control Panel Actions</b>
-Register your domain
-Create a static server
-Create a django web app
-Bind the web app to the domain
-
-
-</pre> </slide>
 
 <slide>
 <pre><h1>Server Start</h1>
@@ -207,47 +166,17 @@ ssh $sa webapps/simpleapps/apache2/bin/restart
 </pre> </slide>
 
 <slide>
-<pre><h1>Deploy App</h1>
-
- $ git init
-
- $ git commit -A -m'Add everything'
-
- $ git push
-
- $ ssh $host 'git pull'
-
-
-
-</pre> </slide>
-
-<slide>
-<pre><h1>Home view</h1>
-Map each URL to a view
-urls.py
-from django.conf.urls import patterns,url
-
-urlpatterns = patterns('',
-    url(r'^$', 'buymore.views.home_page'),
-)
-views.py
-from django.http import Http Response
-
-def home_page(request):
-    return Http Response('My Store Contents')
-
-
-</pre> </slide>
-
-<slide>
 <pre><h1>Hello World</h1>
 
 Map each URL to a view
 
-<b>urls.py</b>
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.http import HttpResponse
+from django.conf.urls import patterns,url
 
 def home_page(request):
-    return HttpResponse('<h1>MyStore</h1><p>Not so cool yet</p>')
+    return HttpResponse('My Store')
 
 urlpatterns = patterns('',
     url(r'^$', home_page),
@@ -257,9 +186,7 @@ urlpatterns = patterns('',
 
 <slide>
 <pre><h1>Create App</h1>
-
  $ manage.py startapp buymore
-
  $ tree
     .
     ├── buymore
@@ -273,8 +200,7 @@ urlpatterns = patterns('',
         ├── settings.py
         ├── urls.py
         └── wsgi.py
-
-<b>settings.py</b>
+_________________________________ <b>settings.py</b>  ______________________________
 
 INSTALLED_APPS = (
     'buymore',
@@ -285,17 +211,38 @@ INSTALLED_APPS = (
 
 </pre> </slide>
 
+<slide>
+<pre><h1>Home view</h1>
+Map each URL to a view
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.conf.urls import patterns,url
+urlpatterns = patterns('',
+    url(r'^$', 'buymore.views.home_page'),
+)
+
+_________________________________ <b>views.py</b> ______________________________
+
+from django.http import Http Response
+def home_page(request):
+    return Http Response('My Store Contents')
+
+
+</pre> </slide>
+
 <slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
     <hgroup class="auto-fadein">
-      <h2 class="white">Data Tricks</h2>
+      <h2 class="white">Data (9 Tricks)</h2>
       <h3 class="white"></h3>
     </hgroup>
   </slide>
 
 <slide>
-<pre><h1>Data Base</h1>
+<pre><h1>Data Base - Development</h1>
 
 <b>SQLite</b>
+_________________________________ <b>settings.py</b> ______________________________
+
 
 DATABASES = {
     'default': {
@@ -308,8 +255,14 @@ DATABASES = {
         }
     }
 
+</pre> </slide>
+
+<slide>
+<pre><h1>Data Base - Production</h1>
 
 <b>Post Gres</b>
+_________________________________ <b>settings.py</b> ______________________________
+
 
 DATABASES = {
     'default': {
@@ -468,10 +421,29 @@ def delete__notes(title):
 
 <slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
     <hgroup class="auto-fadein">
-      <h2 class="white">Views Tricks</h2>
+      <h2 class="white">Views (7 Tricks)</h2>
       <h3 class="white"></h3>
     </hgroup>
   </slide>
+
+<slide>
+<pre><h1>Home view</h1>
+Map each URL to a view
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.conf.urls import patterns,url
+urlpatterns = patterns('',
+    url(r'^$', 'buymore.views.home_page'),
+)
+
+_________________________________ <b>views.py</b> ______________________________
+
+from django.http import Http Response
+def home_page(request):
+    return Http Response('My Store Contents')
+
+
+</pre> </slide>
 
 <slide>
 <pre><h1>List View</h1>
@@ -484,6 +456,12 @@ urlpatterns = patterns('',
     url(r'^$', 'buymore.views.home_page'),
     url(r'list^$', 'buymore.views.list_page'),
 )
+
+</pre> </slide>
+
+<slide>
+<pre><h1>List View</h1>
+Use a template to show a list
 _________________________________ <b>views.py</b> ______________________________
 
 from django.shortcuts import render
@@ -495,35 +473,42 @@ def list_page(request):
 
 _________________________________ <b>list.html</b> ______________________________
 
+<img src='images/ListView.png' />
+
+
+<code>
 <h1>Products</h1>
 <ul>
     {% for p in products %}
         <li><a href="{{ p }}">{{ p }}</a></li>
     {% endfor %}
 </ul>
-
+</code>
 
 </pre> </slide>
 
 <slide>
 <pre><h1>Details View</h1>
 Pass Parms on the URL
-
 _________________________________ <b>urls.py</b>  ______________________________
-
-from django.conf.urls import patterns,url
 
 urlpatterns = patterns('',
     url(r'^(?P<id>[\d]+)$',      'buymore.views.item'),
 )
 _________________________________ <b>views.py</b> ______________________________
 
-from django.shortcuts import render
-
 def item(request,id):
     return render(request, 'details.html', {'p': my_product})
 
 _________________________________ <b>list.html</b> ______________________________
+
+<img src='images/DetailsView.png' />
+
+
+
+
+
+
 
 <h1>Details</h1>
 <a href="{{ p.pk }}">{{ p.pk }}</a>
@@ -547,6 +532,10 @@ class NoteForm (ModelForm):
     class Meta:
         model=Note
 _________________________________ <b>add.html</b> ______________________________
+
+<img src='images/FormModel.png' />
+
+
 
 <form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
     <table>{{ form.as_table }}</table>
@@ -577,14 +566,6 @@ def add_form (request):
     data =  { 'form': form }
     return render(request, 'add.html', data)
 
-_________________________________ <b>add.html</b> ______________________________
-
-<form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
-    <table>{{ form.as_table }}</table>
-    <button type="submit" value="Save">Save</button>
-    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
-</form>
-
 </pre> </slide>
 
 <slide>
@@ -604,7 +585,11 @@ def edit_form (request, title):
             return HttpResponseRedirect('Home')
     return render(request, 'edit.html',  { 'form': form })
 
+
+
+
 _________________________________ <b>edit.html</b> ______________________________
+
 
 <form enctype='multipart/form-data' action="/edit" method="post">{% csrf_token %}
     <table>{{ form.as_table }}</table>
@@ -619,17 +604,11 @@ _________________________________ <b>edit.html</b> _____________________________
 
 <slide>
 <pre><h1>Delete View</h1>
-
-_________________________________ <b>list.html</b> ______________________________
-
-<a href="{{ id }}/delete">Delete Me</a>
-
 _________________________________ <b>urls.py</b>  ______________________________
 
 from django.conf.urls import patterns,url
 
 urlpatterns = patterns('',
-    url(r'^$', 'buymore.views.home_page'),
     url(r'^(?P<id>[\d]+)/delete$', 'buymore.views.delete),
 )
 _________________________________ <b>views.py</b> ______________________________
@@ -640,64 +619,35 @@ def delete_view (request, id):
         o.delete()
     return HttpResponseRedirect('Home')
 
+_________________________________ <b>list.html</b> ______________________________
+
+<img src='images/DeleteView.png' />
 
 </pre> </slide>
 
 <slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
     <hgroup class="auto-fadein">
-      <h2 class="white">Formatting Tricks</h2>
+      <h2 class="white">Formatting (4 Tricks)</h2>
       <h3 class="white"></h3>
     </hgroup>
   </slide>
 
 <slide>
-<pre><h1>App Template</h1>
-Every page on your site has the same structure
-{% endautoescape %}
-<pre>
+<pre><h1>Page Layout</h1>
+Use Twitter Bootstrap for an industry standard appearance
+
 _________________________________ <b>layout.html</b> ______________________________
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Hammer Technology</title>
-        <link href="bootstrap.min.css" rel="stylesheet" />
-        <script src="bootstrap.min.js"></script>
-    </head>
-    <body>
-      <div class='page'>
-        {% block content %} {% endblock %}
-      <div>
-    </body>
-</html>
-
-
-_________________________________ <b>page.html</b> ______________________________
-
-{% extends "layout.html" %}
-{% block content %}
-
-    <h1>Topics</h1>
-    <ul>
-        {% for f in directory %}
-            <li><a href="{{ f }}">{{ f }}</a></li>
-        {% endfor %}
-    </ul>
-
-{% endblock %}
-
-</pre>
-{% autoescape off %}
+<img src='images/PageLayout.png' />
 
 
 
 
 
-</pre> </slide>
 
-<slide>
-<pre><h1>Twitter Bootstrap</h1>
-Use an industry standard appearance
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -707,15 +657,58 @@ Use an industry standard appearance
     <script src="{{ STATIC_URL }}bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Don't hate me because I'm beautiful</h1>
-    <p>Walk this way</p>
+      <div class='page'>
+        {% block content %} {% endblock %}
+      <div>
 </body>
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Page Template</h1>
+Every page on your site has the same structure
+
+_________________________________ <b>page.html</b> ______________________________
+
+<img src='images/PageTemplate.png' />
+
+
+
+
+
+
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Topics</h1>
+    <ul>
+        {% for f in directory %}
+            <li><a href="{{ f }}">{{ f }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
+
+
 
 </pre> </slide>
 
 <slide>
 <pre><h1>Standard Navigation</h1>
 Create a reusable menu bar with Twitter Bootstrap
+
+<img src='images/Navigation.png' />
+
+
+
 
 
     <div class="navbar">
@@ -755,7 +748,7 @@ Use industry standard JavaScript libraries
 
 <slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
     <hgroup class="auto-fadein">
-      <h2 class="white">Document Tricks</h2>
+      <h2 class="white">Document (6 Tricks)</h2>
       <h3 class="white"></h3>
     </hgroup>
   </slide>
@@ -913,7 +906,7 @@ def search(request,name):
 
 <slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
     <hgroup class="auto-fadein">
-      <h2 class="white">Users Tricks</h2>
+      <h2 class="white">Users (7 Tricks)</h2>
       <h3 class="white"></h3>
     </hgroup>
   </slide>
@@ -1012,6 +1005,81 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return doc(request, 'Index')
 
+
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Project (5 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Build an Inventory  of Tricks</h1>
+
+Analyze your next project
+Decompose the larger tasks into tricks
+How many times have you done each trick?
+</pre> </slide>
+
+<slide>
+<pre><h1>Estimate Cost</h1>
+
+<b>A trick can be ...</b>
+    applied in an hour
+    learned in a day
+
+<b>Typical Project</b>
+
+40 old tricks = 40 hours
+
+10 new tricks = 80 hours
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Test Driven Development</h1>
+
+Accelerate your development
+Write tests before code
+Test hourly, daily, weekly
+Deploy when the tests pass
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Host Your App</h1>
+First time with take a day
+With experience it takes an hour
+
+<b>Web Faction</b>
+http://webfaction.com
+Specialize in Django
+
+<b>Control Panel Actions</b>
+Register your domain
+Create a static server
+Create a django web app
+Bind the web app to the domain
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Deploy App</h1>
+
+ $ git init
+
+ $ git commit -A -m'Add everything'
+
+ $ git push
+
+ $ ssh $host 'git pull'
 
 
 

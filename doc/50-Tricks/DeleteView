@@ -1,15 +1,9 @@
 * Delete View *                 -*-muse-*-
-
-_________________________________ **list.html** ______________________________
-
-<a href="{{ id }}/delete">Delete Me</a>
-
 _________________________________ **urls.py**  ______________________________
 
 from django.conf.urls import patterns,url
 
 urlpatterns = patterns('',
-    url(r'^$', 'buymore.views.home_page'),
     url(r'^(?P<id>[\d]+)/delete$', 'buymore.views.delete),
 )
 _________________________________ **views.py** ______________________________
@@ -20,3 +14,6 @@ def delete_view (request, id):
         o.delete()
     return HttpResponseRedirect('Home') 
 
+_________________________________ **list.html** ______________________________
+
+<img src='images/DeleteView.png' />

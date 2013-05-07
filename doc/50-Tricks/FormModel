@@ -12,6 +12,10 @@ class NoteForm (ModelForm):
         model=Note
 _________________________________ **add.html** ______________________________
 
+<img src='images/FormModel.png' />
+
+
+
 <form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
     <table>{{ form.as_table }}</table>
     <button type="submit" value="Save">Save</button>

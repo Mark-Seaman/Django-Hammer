@@ -1,6 +1,8 @@
-* Data Base *                 -*-muse-*-
+* Data Base - Development *                 -*-muse-*-
 
 **SQLite**
+_________________________________ **settings.py** ______________________________
+
 
 DATABASES = {
     'default': {
@@ -12,18 +14,3 @@ DATABASES = {
         'PORT': '',
         }
     }
-
-
-**Post Gres**
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'simpleapps',
-        'USER': 'simpleapps',
-        'PASSWORD': 'abcd,
-        'HOST': '', 
-        'PORT': '', 
-        }
-    }
-
