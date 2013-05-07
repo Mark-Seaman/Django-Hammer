@@ -1,12 +1,10 @@
 * Server Start *                 -*-muse-*-
 
 **Development Server**
-python ./manage.py runserver 8042
-
-**sa-run**
-python ./manage.py runserver 8042
-w localhost:8042
+python ./manage.py runserver 
 
 **Production Server**
 ssh $sa webapps/simpleapps/apache2/bin/restart
 
+**browse**
+w localhost:8000

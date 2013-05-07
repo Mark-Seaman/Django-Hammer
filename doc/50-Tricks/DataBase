@@ -3,7 +3,6 @@
 **SQLite**
 _________________________________ **settings.py** ______________________________
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

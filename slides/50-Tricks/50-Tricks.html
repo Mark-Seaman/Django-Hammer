@@ -52,7 +52,7 @@ URL: https://code.google.com/p/io-2012-slides
 </pre> </slide>
 
 <slide>
-<pre><h1>What is Django</h1>
+<pre><h1>What is Django ?</h1>
 
 <b>Language/Framework</b>
 C#/ASP
@@ -129,15 +129,13 @@ Projects
 <pre><h1>Server Start</h1>
 
 <b>Development Server</b>
-python ./manage.py runserver 8042
-
-<b>sa-run</b>
-python ./manage.py runserver 8042
-w localhost:8042
+python ./manage.py runserver
 
 <b>Production Server</b>
 ssh $sa webapps/simpleapps/apache2/bin/restart
 
+<b>browse</b>
+w localhost:8000
 
 </pre> </slide>
 
@@ -243,7 +241,6 @@ def home_page(request):
 <b>SQLite</b>
 _________________________________ <b>settings.py</b> ______________________________
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -262,7 +259,6 @@ DATABASES = {
 
 <b>Post Gres</b>
 _________________________________ <b>settings.py</b> ______________________________
-
 
 DATABASES = {
     'default': {
@@ -913,8 +909,8 @@ def search(request,name):
   </slide>
 
 <slide>
-<pre><h1>Show Model Details</h1>
-<img src='images/Details.jpg'/>
+<pre><h1>UserAuthorization</h1>
+<img src='images/Admin.jpg'/>
 
 </pre> </slide>
 
@@ -948,8 +944,8 @@ urlpatterns = patterns(
 </pre> </slide>
 
 <slide>
-<pre><h1>UserAuthorization</h1>
-<img src='images/Admin.jpg'/>
+<pre><h1>Show Model Details</h1>
+<img src='images/Details.jpg'/>
 
 </pre> </slide>
 

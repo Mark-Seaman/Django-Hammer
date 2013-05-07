@@ -231,12 +231,12 @@ body {
   background: black;
 }
 
-/* line 98, ../scss/default.scss */
+/* line 98, ../scss/default.scss #797979*/
 slides > slide {
   display: none;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 26px;
-  color: #797979;
+  color: #222;
   width: 900px;
   height: 700px;
   margin-left: -450px;
@@ -1448,7 +1448,7 @@ aside.gdbar img {
     margin-top: 0 !important;
     margin-left: 0 !important;
     opacity: 1 !important;
-    color: #555;
+    color: red /*#555*/;
   }
   /* line 1034, ../scss/default.scss */
   slides slide.far-past, slides slide.past, slides slide.next, slides slide.far-next, slides slide.far-past, slides slide.current {
