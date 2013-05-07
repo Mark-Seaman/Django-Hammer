@@ -8,8 +8,7 @@ cd ~/Projects/django-hammer/slides
 echo "Updating slides $x ..."
 
 # Create the presentation
-cp  slides/$x/Slides $x.txt &&
-cat slides/$x/Title slides/$x/Slides | template/bin/thumpSlides.py  > $x/$x.html 
+cat slides/$x/Title slides/$x/Slides | python ./template/bin/thumpSlides.py  > $x/$x.html 
 
 # Run the presentation
 cd ~/Projects/django-hammer/slides/50-Tricks

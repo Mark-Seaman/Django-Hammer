@@ -68,12 +68,14 @@ def make_italic(line):
 
 # Return the formatted html code for this file
 def wiki_text (filename):
-    return  Popen(['wiki-html-content', filename],stdout=PIPE).stdout.read()   
+    return  Popen(['../slide-text', filename],stdout=PIPE).stdout.read()   
 
 # Process one line of text
 def print_slide(filename):
+    #print 'print:','slides/50-Tricks/'+filename
     #text = open('slides/50-Tricks/'+filename).read()
     text = wiki_text('slides/50-Tricks/'+filename)
+    text = '<pre>'+text+'</pre>'
     print '<slide>\n',text,'</slide>\n'
 
 # Print all the slides as an HTML file for Reveal.js

@@ -444,7 +444,7 @@ slides.layout-faux-widescreen #next-slide-area {
 /* line 298, ../scss/default.scss */
 b {
   font-weight: 600;
-  color: green;
+  color: blue;
 }
 
 /* line 302, ../scss/default.scss */
@@ -462,6 +462,11 @@ a:hover {
 h1, h2, h3 {
   font-weight: 600;
   font-size: 50px;
+  color: green;
+}
+
+h1 {
+  margin-top: 1em;
   color: green;
 }
 
