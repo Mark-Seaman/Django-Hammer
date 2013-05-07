@@ -52,10 +52,10 @@ Bridge:Users (7 Tricks)
 AdminImage
 AdminInterface
 UserLogin
+EnforcingSecurity
 DetailsImage
 EditUser
 ListUsers
-EnforcingSecurity
 
 Bridge:Project (5 Tricks)
 TricksInventory
