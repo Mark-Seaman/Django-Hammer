@@ -1,0 +1,15 @@
+* Add Record *                 -*-muse-*-
+Use a model add record
+
+_________________________________ **models.py** ______________________________
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+def add_note(title,body):
+    n = Note()
+    n.title = title
+    n.body = body
+    n.save()
+

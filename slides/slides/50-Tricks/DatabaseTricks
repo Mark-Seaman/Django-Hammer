@@ -1,0 +1,11 @@
+* Database Tricks *                 -*-muse-*-
+Managing your data using models
+
+[[DataBase][hook up database]]
+[[NewDataModel][define new data model]]
+[[CreateDatabase][create new database]]
+[[AddRecord][insert new record]]
+[[SaveRecord][save data record]]
+[[QueryRecords][query matching records]]
+[[ShowResults][walk through a list of records]]
+[[DeleteRecord][delete record]]

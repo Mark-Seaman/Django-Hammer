@@ -1,0 +1,11 @@
+* Deploy App *                 -*-muse-*-
+
+ $ git init
+
+ $ git commit -A -m'Add everything'
+
+ $ git push
+
+ $ ssh $host 'git pull'
+
+

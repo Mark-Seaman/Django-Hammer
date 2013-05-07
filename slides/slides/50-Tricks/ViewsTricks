@@ -1,0 +1,15 @@
+* Views Tricks *                 -*-muse-*-
+
+[[UrlRoutes][home view]]
+
+[[Templates][list view]]
+
+[[PassParms][details view]]
+
+[[FormModel][form model]]
+
+[[AddRecordView][add new record]]
+
+[[EditView][edit view]]
+
+[[DeleteView][delete view]]

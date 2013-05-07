@@ -1,0 +1,20 @@
+* Query Records *                 -*-muse-*-
+Find record in the database
+
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+def list_notes(title):
+    return Note.objects.all()
+
+def lookup_note(title):
+    return Note.objects.get(title='Lost Worlds')
+
+def find_notes(title):
+    return Note.objects.filter(title__gt='R')
+
+
+

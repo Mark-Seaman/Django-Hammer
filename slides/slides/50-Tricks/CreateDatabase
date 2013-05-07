@@ -1,0 +1,12 @@
+* Create Database *                 -*-muse-*-
+Automatically create data base tables for all data types
+
+ $ manage.py syncdb
+
+No SQL required
+
+ $ manage.py dumpData
+ 
+ $ manage.py loadData
+
+

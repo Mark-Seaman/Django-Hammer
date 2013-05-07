@@ -1,0 +1,18 @@
+#!/bin/bash
+# Sling slides
+
+x=50-Tricks
+
+# Go to the directory
+cd ~/Projects/django-hammer/slides
+echo "Updating slides $x ..."
+
+# Create the presentation
+cp  slides/$x/Slides $x.txt &&
+cat slides/$x/Title slides/$x/Slides | template/bin/thumpSlides.py  > $x/$x.html 
+
+# Run the presentation
+cd ~/Projects/django-hammer/slides/50-Tricks
+w 50-Tricks.html
+#present
+

@@ -1,0 +1,9 @@
+* Search Text *                 -*-muse-*-
+
+# Find all people with Bill in their name
+
+def search(request,name):
+    people = User.objects.filter(name_contains='Bill')
+    return render(request, 'doc.html', {'people': people})
+
+

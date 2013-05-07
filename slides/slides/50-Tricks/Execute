@@ -1,0 +1,25 @@
+* Execute *                 -*-muse-*-
+Execute some system command
+
+_________________________________ **urls.py**  ______________________________
+
+from django.conf.urls import patterns,url
+
+urlpatterns = patterns('',
+    url(r'^(?P<command>[\w]+)$',      'buymore.views.execute_view'),
+)
+_________________________________ **views.py** ______________________________
+
+from django.shortcuts   import render
+
+def do_command (command):
+    return  Popen(command.split(),stdout=PIPE).stdout.read()   
+
+def execute_view (request, command):
+    results = do_command(command)
+    return render(request, 'text.html', {'command': command, 'text': results})
+
+_________________________________ **text.html** ______________________________
+
+<h1>Results of {{ command }}</h1>
+{{ text }}

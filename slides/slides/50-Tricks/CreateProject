@@ -1,0 +1,20 @@
+* Create Project *                 -*-muse-*-
+
+ $ django-admin.py startproject mystore
+
+ $ tree mystore
+
+    mystore/
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+
+ $ cd mystore
+
+ $ manage.py runserver
+
+ $ w localhost:8000
+
+
+

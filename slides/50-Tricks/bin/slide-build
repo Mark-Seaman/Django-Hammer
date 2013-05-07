@@ -1,0 +1,15 @@
+#!/bin/bash
+# Sling slides
+echo Sling slides
+
+# Go to the directory
+cd ~/Documents/Slides
+
+# Copy the template files
+rsync -auv template/ $1 &&
+
+# Create the presentation
+cp text/$1.txt $1 &&
+cat $1/$1.txt | template/bin/sling.py  > $1/$1.html &&
+mv slide_config.js $1 
+

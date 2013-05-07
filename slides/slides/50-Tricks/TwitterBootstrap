@@ -1,0 +1,14 @@
+* Twitter Bootstrap *                 -*-muse-*-
+Use an industry standard appearance
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hammer Technology</title>
+    <link href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet" />
+    <script src="{{ STATIC_URL }}bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>Don't hate me because I'm beautiful</h1>
+    <p>Walk this way</p>
+</body>

@@ -1,0 +1,29 @@
+* Data Base *                 -*-muse-*-
+
+**SQLite**
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'hammer.db', 
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+        }
+    }
+
+
+**Post Gres**
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'simpleapps',
+        'USER': 'simpleapps',
+        'PASSWORD': 'abcd,
+        'HOST': '', 
+        'PORT': '', 
+        }
+    }
+

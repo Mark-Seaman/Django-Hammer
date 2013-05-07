@@ -1,0 +1,12 @@
+* Js Support *                 -*-muse-*-
+Use industry standard JavaScript libraries
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+</head>
+
+
+
+

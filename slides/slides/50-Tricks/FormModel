@@ -1,0 +1,23 @@
+* Form Model *                 -*-muse-*-
+Use a form template to edit records
+
+_________________________________ **models.py** ______________________________
+
+class Note (models.Model):
+    path  = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+class NoteForm (ModelForm):
+    class Meta:
+        model=Note
+_________________________________ **add.html** ______________________________
+
+<form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button type="submit" value="Save">Save</button>
+    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+</form>
+
+
+
+

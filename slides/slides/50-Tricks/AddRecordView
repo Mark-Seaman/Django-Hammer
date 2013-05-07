@@ -1,0 +1,23 @@
+* Add Record View *                 -*-muse-*-
+Use a form template to add records
+
+_________________________________ **views.py** ______________________________
+
+def add_form (request):
+     if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('Home') 
+    else:
+        form = NoteForm()
+    data =  { 'form': form }
+    return render(request, 'add.html', data)
+
+_________________________________ **add.html** ______________________________
+
+<form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button type="submit" value="Save">Save</button>
+    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+</form>

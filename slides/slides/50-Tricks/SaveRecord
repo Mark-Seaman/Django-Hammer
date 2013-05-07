@@ -1,0 +1,18 @@
+* Save Record *                 -*-muse-*-
+Lookup a record and modify its contents
+
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+def modify_note(title,body):
+    n = Note.objects.get(title=title)
+    n.body = body
+    n.save()
+
+
+
+
+

@@ -1,0 +1,10 @@
+* New Data Model *                 -*-muse-*-
+Define a new data type using models
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+
+

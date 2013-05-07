@@ -1,0 +1,26 @@
+* Edit View *                 -*-muse-*-
+Use a form template to edit records
+
+_________________________________ **views.py** ______________________________
+
+def edit_form (request, title):
+    if request.method != 'POST':
+        note = Note.objects.get(title=title)
+        form =  NoteForm(instance=note)
+    else:
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            o = Obj.objects.get(form.cleaned_data['pk'])
+            return HttpResponseRedirect('Home') 
+    return render(request, 'edit.html',  { 'form': form })
+
+_________________________________ **edit.html** ______________________________
+
+<form enctype='multipart/form-data' action="/edit" method="post">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button type="submit" value="Save">Save</button>
+    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+</form>
+
+
+

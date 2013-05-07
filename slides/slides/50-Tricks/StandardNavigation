@@ -1,0 +1,20 @@
+* Standard Navigation *                 -*-muse-*-
+Create a reusable menu bar with Twitter Bootstrap
+
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="{{ base }}">Home</a></li>
+          <li><a href="{{ base }}mill/">Mills</a></li>
+          <li><a href="{{ base }}notes/info">Information</a></li>                 
+          <li><a href="{{ base }}alert">Alerts</a></li>
+          <li><a href="{{ base }}money">Money</a></li> 
+          <li><a href="{{ base }}money/prices">Unit prices</a></li> 
+        </ul>
+      </div>
+    </div>
+
+
+
+

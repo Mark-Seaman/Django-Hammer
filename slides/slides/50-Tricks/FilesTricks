@@ -1,0 +1,10 @@
+* Files Tricks *                 -*-muse-*-
+Manipulate files from your web app
+
+[[BrowseDirectory][browse a directory]]
+[[ReadFile][read file]]
+[[WriteFile][write file]]
+[[Export][data export]]
+[[Import][data import]]
+[[Execute][execute system commands]]
+[[Queue][queue commands for later]]

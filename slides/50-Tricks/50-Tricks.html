@@ -1,0 +1,1030 @@
+<!--
+Shrinking World Solutions Slide Template
+based on Google IO 2012 HTML5 Slide Template
+
+Authors: Mark Seaman <mark.seaman@shrinking-world.com>
+         Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shrinking World Solutions</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground" style="background-image: url(./images/water2.jpg)">
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 class="black" data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 class="black" data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p class="black" data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Home view</h1>
+<br/> Map each URL to a view
+<br/> urls.py
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^$', 'buymore.views.home_page'),
+<br/> )
+<br/> views.py
+<br/> from django.http import Http Response
+<br/> 
+<br/> def home_page(request):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return Http Response('My Store Contents')
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white"> Intro</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>What is Django</h1>
+<br/> 
+<br/> <b>Language/Framework</b>
+<br/> C#/ASP
+<br/> Ruby/Rails
+<br/> Java/JSP
+<br/> Python/Django
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Why Django ?</h1>
+<br/> 
+<br/> Created by refactoring real applications
+<br/> 
+<br/> Excellent docs
+<br/> 
+<br/> Easy hosting solutions (1 hour + $10/month)
+<br/> 
+<br/> Build your first app in hours
+<br/> 
+<br/> Great for automation
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Learn By Doing</h1>
+<br/> 
+<br/> Pick a project and technology
+<br/> 
+<br/> Go for it!
+<br/> 
+<br/> Our project: build a wiki from scratch
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Fifty Tricks</h1>
+<br/> 
+<br/> <b>Types of Knowledge</b>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; Engineering
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; Technology - Catalog of tricks
+<br/> 
+<br/> <b>A trick can be ...</b>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; applied in an hour
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; learned in a day
+<br/> 
+<br/>  <a href="ProjectEstimation">ProjectEstimation</a> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Trick Groups</h1>
+<br/> Developing a web application requires 50 tricks.
+<br/> 
+<br/> Server
+<br/> Data
+<br/> Views
+<br/> Formatting
+<br/> Documents
+<br/> Users
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Server Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Host Your App</h1>
+<br/> First time with take a day
+<br/> With experience it takes an hour
+<br/> 
+<br/> <b>Web Faction</b>
+<br/> <a href="http://webfaction.com" target="_blank">http://webfaction.com</a>
+<br/> Specialize in Django
+<br/> 
+<br/> <b>Control Panel Actions</b>
+<br/> Register your domain
+<br/> Create a static server
+<br/> Create a django web app
+<br/> Bind the web app to the domain
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Server Start</h1>
+<br/> 
+<br/> <b>Development Server</b>
+<br/> python ./manage.py runserver 8042
+<br/> 
+<br/> <b>sa-run</b>
+<br/> python ./manage.py runserver 8042
+<br/> w localhost:8042
+<br/> 
+<br/> <b>Production Server</b>
+<br/> ssh $sa webapps/simpleapps/apache2/bin/restart
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Create Project</h1>
+<br/> 
+<br/>  $ django-admin.py startproject mystore
+<br/> 
+<br/>  $ tree mystore
+<br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; mystore/
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; ├── __init__.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; ├── settings.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; ├── urls.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; └── wsgi.py
+<br/> 
+<br/>  $ cd mystore
+<br/> 
+<br/>  $ manage.py runserver
+<br/> 
+<br/>  $ w localhost:8000
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Deploy App</h1>
+<br/> 
+<br/>  $ git init
+<br/> 
+<br/>  $ git commit -A -m'Add everything'
+<br/> 
+<br/>  $ git push
+<br/> 
+<br/>  $ ssh $host 'git pull'
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Home view</h1>
+<br/> Map each URL to a view
+<br/> urls.py
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^$', 'buymore.views.home_page'),
+<br/> )
+<br/> views.py
+<br/> from django.http import Http Response
+<br/> 
+<br/> def home_page(request):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return Http Response('My Store Contents')
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Hello World</h1>
+<br/> 
+<br/> Map each URL to a view
+<br/> 
+<br/> <b>urls.py</b>
+<br/> 
+<br/> def home_page(request):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return  <a href="HttpResponse">HttpResponse</a> ('<h1> <a href="MyStore">MyStore</a> </h1><p>Not so cool yet</p>')
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^$', home_page),
+<br/> )
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Create App</h1>
+<br/> 
+<br/>  $ manage.py startapp buymore
+<br/> 
+<br/>  $ tree
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; .
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; ├── buymore
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; │   ├── __init__.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; │   ├── models.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; │   ├── tests.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; │   └── views.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; ├── manage.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; └── mystore
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── __init__.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── settings.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ├── urls.py
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └── wsgi.py
+<br/> 
+<br/> <b>settings.py</b>
+<br/> 
+<br/> INSTALLED_APPS = (
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; 'buymore',
+<br/> )
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Data Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Data Base</h1>
+<br/> 
+<br/> <b>SQLite</b>
+<br/> 
+<br/> DATABASES = {
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; 'default': {
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'ENGINE': 'django.db.backends.sqlite3',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'NAME': 'hammer.db',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'USER': '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'PASSWORD': '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'HOST': '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'PORT': '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; }
+<br/> 
+<br/> 
+<br/> <b>Post Gres</b>
+<br/> 
+<br/> DATABASES = {
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; 'default': {
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'NAME': 'simpleapps',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'USER': 'simpleapps',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'PASSWORD': 'abcd,
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'HOST': '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'PORT': '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; }
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>New Data Model</h1>
+<br/> Define a new data type using models
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; title = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Create Database</h1>
+<br/> Automatically create data base tables for all data types
+<br/> 
+<br/>  $ manage.py syncdb
+<br/> 
+<br/> No SQL required
+<br/> 
+<br/>  $ manage.py dumpData
+<br/> 
+<br/>  $ manage.py loadData
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Add Record</h1>
+<br/> Use a model add record
+<br/> 
+<br/> _________________________________ <b>models.py</b> ______________________________
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; title = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> def add_note(title,body):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n = Note()
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n.title = title
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n.body = body
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n.save()
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Save Record</h1>
+<br/> Lookup a record and modify its contents
+<br/> 
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; title = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> 
+<br/> def modify_note(title,body):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n = Note.objects.get(title=title)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n.body = body
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n.save()
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Query Records</h1>
+<br/> Find record in the database
+<br/> 
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; title = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> 
+<br/> def list_notes(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return Note.objects.all()
+<br/> 
+<br/> def lookup_note(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return Note.objects.get(title='Lost Worlds')
+<br/> 
+<br/> def find_notes(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return Note.objects.filter(title__gt='R')
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Show Results</h1>
+<br/> Walk through a list of results from a query
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; title = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> 
+<br/> def print_notes(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; for n in Note.objects.all():
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print 'Title:', n.title, 'Text:', n.body
+<br/> 
+<br/> def notes_table(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return [ [n.title, n.body] for n in Note.objects.all() ]
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Delete Record</h1>
+<br/> Delete one or more objects
+<br/> 
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; title = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> 
+<br/> def delete_all_notes():
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; for n in Note.objects.all():
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n.delete()
+<br/> 
+<br/> def delete_note(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n = Note.objects.get(title='Lost Worlds')
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; n.delete()
+<br/> 
+<br/> def delete__notes(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; for n in Note.objects.filter(title__gt='R'):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n.delete()
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Views Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>List View</h1>
+<br/> Use a template to show a list
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^$', 'buymore.views.home_page'),
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'list^$', 'buymore.views.list_page'),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> from django.shortcuts import render
+<br/> 
+<br/> my_products = [ 'diapers', 'clocks', 'zombie repelent' ]
+<br/> 
+<br/> def list_page(request):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'list.html', {'products': my_products})
+<br/> 
+<br/> _________________________________ <b>list.html</b> ______________________________
+<br/> 
+<br/> <h1>Products</h1>
+<br/> <ul>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; {% for p in products %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li><a href="{{ p }}">{{ p }}</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; {% endfor %}
+<br/> </ul>
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Details View</h1>
+<br/> Pass Parms on the URL
+<br/> 
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^(?P<id>[\d]+)$',&nbsp;&nbsp;&nbsp;&nbsp;  'buymore.views.item'),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> from django.shortcuts import render
+<br/> 
+<br/> def item(request,id):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'details.html', {'p': my_product})
+<br/> 
+<br/> _________________________________ <b>list.html</b> ______________________________
+<br/> 
+<br/> <h1>Details</h1>
+<br/> <a href="{{ p.pk }}">{{ p.pk }}</a>
+<br/> <a href="{{ p.title }}">{{ p.title }}</a>
+<br/> <a href="{{ p.description }}">{{ p.description }}</a>
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Form Model</h1>
+<br/> Use a form template to edit records
+<br/> 
+<br/> _________________________________ <b>models.py</b> ______________________________
+<br/> 
+<br/> class Note (models.Model):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; path  = models. <a href="CharField">CharField</a>  (max_length=200)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; body  = models. <a href="TextField">TextField</a>  ()
+<br/> 
+<br/> class  <a href="NoteForm">NoteForm</a>  ( <a href="ModelForm">ModelForm</a> ):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; class Meta:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model=Note
+<br/> _________________________________ <b>add.html</b> ______________________________
+<br/> 
+<br/> <form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <table>{{ form.as_table }}</table>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" value="Save">Save</button>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+<br/> </form>
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Add Record View</h1>
+<br/> Use a form template to add records
+<br/> 
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> def add_form (request):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  if request.method == 'POST':
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form =  <a href="NoteForm">NoteForm</a> (request.POST)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if form.is_valid():
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form.save()
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return  <a href="HttpResponseRedirect">HttpResponseRedirect</a> ('Home')
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; else:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form =  <a href="NoteForm">NoteForm</a> ()
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; data =  { 'form': form }
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'add.html', data)
+<br/> 
+<br/> _________________________________ <b>add.html</b> ______________________________
+<br/> 
+<br/> <form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <table>{{ form.as_table }}</table>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" value="Save">Save</button>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+<br/> </form>
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Edit View</h1>
+<br/> Use a form template to edit records
+<br/> 
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> def edit_form (request, title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; if request.method != 'POST':
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; note = Note.objects.get(title=title)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form =   <a href="NoteForm">NoteForm</a> (instance=note)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; else:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form =  <a href="NoteForm">NoteForm</a> (request.POST)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if form.is_valid():
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o = Obj.objects.get(form.cleaned_data['pk'])
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return  <a href="HttpResponseRedirect">HttpResponseRedirect</a> ('Home')
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'edit.html',  { 'form': form })
+<br/> 
+<br/> _________________________________ <b>edit.html</b> ______________________________
+<br/> 
+<br/> <form enctype='multipart/form-data' action="/edit" method="post">{% csrf_token %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <table>{{ form.as_table }}</table>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" value="Save">Save</button>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+<br/> </form>
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Delete View</h1>
+<br/> 
+<br/> _________________________________ <b>list.html</b> ______________________________
+<br/> 
+<br/> <a href="{{ id }}/delete">Delete Me</a>
+<br/> 
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^$', 'buymore.views.home_page'),
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^(?P<id>[\d]+)/delete$', 'buymore.views.delete),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> def delete_view (request, id):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; o = Obj.objects.get(pk=id)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; if o:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o.delete()
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return  <a href="HttpResponseRedirect">HttpResponseRedirect</a> ('Home')
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Formatting Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>App Template</h1>
+<br/> Every page on your site has the same structure
+<br/> {% endautoescape %}
+<br/> <pre>
+<br/> _________________________________ <b>layout.html</b> ______________________________
+<br/> 
+<br/> <!DOCTYPE html>
+<br/> <html>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <head>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <title>Hammer Technology</title>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <link href="bootstrap.min.css" rel="stylesheet" />
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <script src="bootstrap.min.js"></script>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; </head>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <body>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;   <div class='page'>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% block content %} {% endblock %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;   <div>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; </body>
+<br/> </html>
+<br/> 
+<br/> 
+<br/> _________________________________ <b>page.html</b> ______________________________
+<br/> 
+<br/> {% extends "layout.html" %}
+<br/> {% block content %}
+<br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <h1>Topics</h1>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <ul>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% for f in directory %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li><a href="{{ f }}">{{ f }}</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% endfor %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; </ul>
+<br/> 
+<br/> {% endblock %}
+<br/> 
+<br/> </pre>
+<br/> {% autoescape off %}
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Twitter Bootstrap</h1>
+<br/> Use an industry standard appearance
+<br/> 
+<br/> <!DOCTYPE html>
+<br/> <html>
+<br/> <head>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <title>Hammer Technology</title>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <link href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet" />
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <script src="{{ STATIC_URL }}bootstrap.min.js"></script>
+<br/> </head>
+<br/> <body>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <h1>Don't hate me because I'm beautiful</h1>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <p>Walk this way</p>
+<br/> </body>
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Standard Navigation</h1>
+<br/> Create a reusable menu bar with Twitter Bootstrap
+<br/> 
+<br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <div class="navbar">
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;   <div class="navbar-inner">
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <ul class="nav">
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <li><a href="{{ base }}">Home</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <li><a href="{{ base }}mill/">Mills</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <li><a href="{{ base }}notes/info">Information</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <li><a href="{{ base }}alert">Alerts</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <li><a href="{{ base }}money">Money</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <li><a href="{{ base }}money/prices">Unit prices</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </ul>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;   </div>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; </div>
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Js Support</h1>
+<br/> Use industry standard  <a href="JavaScript">JavaScript</a>  libraries
+<br/> 
+<br/> <!DOCTYPE html>
+<br/> <html>
+<br/> <head>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+<br/> </head>
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Document Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Browse Directory</h1>
+<br/> Show a list of links for each file in a directory
+<br/> 
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^(?P<path>[\w]+)$',&nbsp;&nbsp;&nbsp;&nbsp;  'buymore.views.list_view'),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> from django.shortcuts   import render
+<br/> from os import listdir
+<br/> 
+<br/> def list_view (request,path):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'list.html', {'files': listdir(path)})
+<br/> 
+<br/> _________________________________ <b>list.html</b> ______________________________
+<br/> 
+<br/> <h1>Files</h1>
+<br/> <ul>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; {% for f in files %}
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li><a href="{{ f }}">{{ f }}</a></li>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; {% endfor %}
+<br/> </ul>
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Read File</h1>
+<br/> Display text from a file
+<br/> 
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^(?P<path>[\w]+)$',&nbsp;&nbsp;&nbsp;&nbsp;  'buymore.views.read_view'),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> from django.shortcuts   import render
+<br/> 
+<br/> def read_view (request,path):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'text.html', {'text': open(path).read()})
+<br/> 
+<br/> _________________________________ <b>text.html</b> ______________________________
+<br/> 
+<br/> <h1>Text</h1>
+<br/> {{ text }}
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Write File</h1>
+<br/> Write a log of page hits to a file
+<br/> 
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^(?P<path>[\w]+)$',&nbsp;&nbsp;&nbsp;&nbsp;  'buymore.views.record_view'),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> from django.http&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import  <a href="HttpResponseRedirect">HttpResponseRedirect</a> 
+<br/> from datetime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   import datetime
+<br/> 
+<br/> def log(user,page):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; f=open(path,'a')
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; f.write(str(datetime.now())+', '+user+', '+page)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; f.close()
+<br/> 
+<br/> def record_view (request, path):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; log (request.user, path)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return  <a href="HttpResponseRedirect">HttpResponseRedirect</a> ('Home')
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Execute</h1>
+<br/> Execute some system command
+<br/> 
+<br/> _________________________________ <b>urls.py</b>  ______________________________
+<br/> 
+<br/> from django.conf.urls import patterns,url
+<br/> 
+<br/> urlpatterns = patterns('',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^(?P<command>[\w]+)$',&nbsp;&nbsp;&nbsp;&nbsp;  'buymore.views.execute_view'),
+<br/> )
+<br/> _________________________________ <b>views.py</b> ______________________________
+<br/> 
+<br/> from django.shortcuts   import render
+<br/> 
+<br/> def do_command (command):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return  Popen(command.split(),stdout=PIPE).stdout.read()
+<br/> 
+<br/> def execute_view (request, command):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; results = do_command(command)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'text.html', {'command': command, 'text': results})
+<br/> 
+<br/> _________________________________ <b>text.html</b> ______________________________
+<br/> 
+<br/> <h1>Results of {{ command }}</h1>
+<br/> {{ text }}
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Text To Html</h1>
+<br/> 
+<br/> from subprocess&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; import Popen,PIPE
+<br/> from django.shortcuts   import render
+<br/> 
+<br/> def format_doc(title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; pipe = Popen (['wiki-html-content', title], stdout=PIPE)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return pipe.stdout.read()
+<br/> 
+<br/> def doc(request,title):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; text = format_doc(title)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render (request, 'doc.html', {'title': title, 'text': text})
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Search Text</h1>
+<br/> 
+<br/> # Find all people with Bill in their name
+<br/> 
+<br/> def search(request,name):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; people = User.objects.filter(name_contains='Bill')
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return render(request, 'doc.html', {'people': people})
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Users Tricks</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Show Model Details</h1>
+<br/> <img src='images/Details.jpg'/>
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Admin Interface</h1>
+<br/> 
+<br/> from django.conf.urls import patterns, include, url
+<br/> from django.contrib import admin
+<br/> 
+<br/> admin.autodiscover()
+<br/> 
+<br/> urlpatterns = patterns(
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; '',
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; url(r'^admin/',   include(admin.site.urls)),
+<br/> )
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> slides/50-Tricks/ <a href="Login">Login</a> 
+<br/> File not found, slides/50-Tricks/ <a href="Login">Login</a> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1> <a href="UserAuthorization">UserAuthorization</a> </h1>
+<br/> <img src='images/Admin.jpg'/>
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Edit User</h1>
+<br/> 
+<br/> 
+<br/> <img src='images/Edit.jpg'/>
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>List Users</h1>
+<br/> 
+<br/> 
+<br/> <img src='images/User.jpg'/>
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+<slide>
+<div style="margin:6em"><br/> <h1>Enforcing Security</h1>
+<br/> 
+<br/> from django.contrib.auth.decorators import login_required
+<br/> 
+<br/> @login_required(login_url='/login')
+<br/> 
+<br/> def home(request):
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; return doc(request, 'Index')
+<br/> 
+<br/> 
+<br/> 
+<br/> </div>
+</slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/sws_logo_300.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thank You!</h2>
+      <p>Mark Seaman</p>
+      <p>Shrinking World Solutions</p>
+      <p>http://Mark.Seaman@Shrinking-World.com</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide  class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <article class="flexbox vcenter">
+      <img  class="reflect" src="images/sws_logo_300.png">
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
+

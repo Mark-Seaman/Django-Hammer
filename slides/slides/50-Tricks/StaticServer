@@ -1,0 +1,9 @@
+* Static File Server *                 -*-muse-*-
+
+static_dir = {'document_root': '/home/seaman/myapp/static'}
+
+urlpatterns = patterns('',
+
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', static_dir),
+
+)

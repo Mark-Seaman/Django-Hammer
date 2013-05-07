@@ -1,0 +1,26 @@
+* Create App *                 -*-muse-*-
+
+ $ manage.py startapp buymore
+
+ $ tree
+    .
+    ├── buymore
+    │   ├── __init__.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   └── views.py
+    ├── manage.py
+    └── mystore
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
+
+**settings.py**
+
+INSTALLED_APPS = (
+    'buymore',
+)
+
+
+

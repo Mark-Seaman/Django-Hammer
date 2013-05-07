@@ -1,0 +1,14 @@
+* Text To Html *                 -*-muse-*-
+
+from subprocess         import Popen,PIPE
+from django.shortcuts   import render
+
+def format_doc(title):
+    pipe = Popen (['wiki-html-content', title], stdout=PIPE)
+    return pipe.stdout.read()
+
+def doc(request,title):
+    text = format_doc(title)
+    return render (request, 'doc.html', {'title': title, 'text': text})
+   
+

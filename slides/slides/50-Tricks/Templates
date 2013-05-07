@@ -1,0 +1,28 @@
+* List View *                 -*-muse-*-
+Use a template to show a list 
+_________________________________ **urls.py**  ______________________________
+
+from django.conf.urls import patterns,url
+
+urlpatterns = patterns('',
+    url(r'^$', 'buymore.views.home_page'),
+    url(r'list^$', 'buymore.views.list_page'),
+)
+_________________________________ **views.py** ______________________________
+
+from django.shortcuts import render
+
+my_products = [ 'diapers', 'clocks', 'zombie repelent' ]
+
+def list_page(request):
+    return render(request, 'list.html', {'products': my_products})
+
+_________________________________ **list.html** ______________________________
+
+<h1>Products</h1>
+<ul>
+    {% for p in products %}
+        <li><a href="{{ p }}">{{ p }}</a></li>
+    {% endfor %}
+</ul>
+

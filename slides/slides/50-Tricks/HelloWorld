@@ -1,0 +1,12 @@
+* Hello World *                 -*-muse-*-
+
+Map each URL to a view
+
+**urls.py**
+
+def home_page(request):
+    return HttpResponse('<h1>MyStore</h1><p>Not so cool yet</p>')
+
+urlpatterns = patterns('',
+    url(r'^$', home_page),
+)

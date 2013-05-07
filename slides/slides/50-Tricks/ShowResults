@@ -1,0 +1,16 @@
+* Show Results *                 -*-muse-*-
+Walk through a list of results from a query
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+def print_notes(title):
+    for n in Note.objects.all():
+        print 'Title:', n.title, 'Text:', n.body
+
+def notes_table(title):
+    return [ [n.title, n.body] for n in Note.objects.all() ] 
+
+
