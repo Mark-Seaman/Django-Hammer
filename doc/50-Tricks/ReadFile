@@ -3,23 +3,16 @@ Display text from a file
 
 _________________________________ **urls.py**  ______________________________
 
-from django.conf.urls import patterns,url
-
 urlpatterns = patterns('',
-    url(r'^(?P<path>[\w]+)$',      'buymore.views.read_view'),
+    url(r'^(?P< path >[\w]+)$',      'buymore.views.read_view'),
 )
 _________________________________ **views.py** ______________________________
-
-from django.shortcuts   import render
 
 def read_view (request,path):
     return render(request, 'text.html', {'text': open(path).read()})
 
 _________________________________ **text.html** ______________________________
 
-<h1>Text</h1>
-{{ text }}
-
-
+<img src='images/ReadFile.png' />
 
 

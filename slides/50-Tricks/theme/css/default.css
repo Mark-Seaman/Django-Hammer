@@ -533,7 +533,7 @@ ul ul {
   opacity: 1;
 }
 
-/* line 373, ../scss/default.scss */
+/* line 373, ../scss/default.scss #e6e6e6 */
 pre {
   font-family: 'Source Code Pro', 'Courier New', monospace;
   font-size: 20px;
@@ -542,7 +542,7 @@ pre {
   letter-spacing: -1px;
   margin-bottom: 20px;
   width: 106%;
-  background-color: #e6e6e6;
+  background-color: white;
   left: -60px;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -550,10 +550,10 @@ pre {
   box-sizing: border-box;
   /*overflow: hidden;*/
 }
-/* line 387, ../scss/default.scss */
+/* line 387, ../scss/default.scss #a9a9a9 */
 pre[data-lang]:after {
   content: attr(data-lang);
-  background-color: #a9a9a9;
+  background-color:white;
   right: 0;
   top: 0;
   position: absolute;

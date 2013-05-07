@@ -3,7 +3,7 @@ Pass Parms on the URL
 _________________________________ **urls.py**  ______________________________
 
 urlpatterns = patterns('',
-    url(r'^(?P<id>[\d]+)$',      'buymore.views.item'),
+    url(r'^(?P< id >[\d]+)$',      'buymore.views.item'),
 )
 _________________________________ **views.py** ______________________________
 

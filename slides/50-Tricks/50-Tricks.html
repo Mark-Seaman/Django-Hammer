@@ -342,11 +342,6 @@ def modify_note(title,body):
     n.body = body
     n.save()
 
-
-
-
-
-
 </pre> </slide>
 
 <slide>
@@ -397,11 +392,9 @@ def notes_table(title):
 <pre><h1>Delete Record</h1>
 Delete one or more objects
 
-
 class Note (models.Model):
     title = models.CharField (max_length=200)
     body  = models.TextField ()
-
 
 def delete_all_notes():
     for n in Note.objects.all():
@@ -493,7 +486,7 @@ Pass Parms on the URL
 _________________________________ <b>urls.py</b>  ______________________________
 
 urlpatterns = patterns('',
-    url(r'^(?P<id>[\d]+)$',      'buymore.views.item'),
+    url(r'^(?P< id >[\d]+)$',      'buymore.views.item'),
 )
 _________________________________ <b>views.py</b> ______________________________
 
@@ -588,6 +581,9 @@ def edit_form (request, title):
 
 
 
+
+
+
 _________________________________ <b>edit.html</b> ______________________________
 
 
@@ -609,7 +605,7 @@ _________________________________ <b>urls.py</b>  ______________________________
 from django.conf.urls import patterns,url
 
 urlpatterns = patterns('',
-    url(r'^(?P<id>[\d]+)/delete$', 'buymore.views.delete),
+    url(r'^(?P< id >[\d]+)/delete$', 'buymore.views.delete),
 )
 _________________________________ <b>views.py</b> ______________________________
 
@@ -734,12 +730,34 @@ Create a reusable menu bar with Twitter Bootstrap
 <pre><h1>Js Support</h1>
 Use industry standard JavaScript libraries
 
+<img src='images/JavaScript.png' />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
-<head>
-    <script src="{{ STATIC_URL }}jquery-latest.js"></script>
-</head>
+    <head>
+        <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+    </head>
+    <body>
 
+    </body>
+</html>
 
 
 
@@ -756,23 +774,21 @@ Use industry standard JavaScript libraries
 <slide>
 <pre><h1>Browse Directory</h1>
 Show a list of links for each file in a directory
-
 _________________________________ <b>urls.py</b>  ______________________________
-
-from django.conf.urls import patterns,url
-
 urlpatterns = patterns('',
     url(r'^(?P<path>[\w]+)$',      'buymore.views.list_view'),
 )
 _________________________________ <b>views.py</b> ______________________________
-
-from django.shortcuts   import render
 from os import listdir
 
 def list_view (request,path):
     return render(request, 'list.html', {'files': listdir(path)})
 
 _________________________________ <b>list.html</b> ______________________________
+<img src='images/ListDirectory.png' />
+
+
+
 
 <h1>Files</h1>
 <ul>
@@ -790,24 +806,17 @@ Display text from a file
 
 _________________________________ <b>urls.py</b>  ______________________________
 
-from django.conf.urls import patterns,url
-
 urlpatterns = patterns('',
-    url(r'^(?P<path>[\w]+)$',      'buymore.views.read_view'),
+    url(r'^(?P< path >[\w]+)$',      'buymore.views.read_view'),
 )
 _________________________________ <b>views.py</b> ______________________________
-
-from django.shortcuts   import render
 
 def read_view (request,path):
     return render(request, 'text.html', {'text': open(path).read()})
 
 _________________________________ <b>text.html</b> ______________________________
 
-<h1>Text</h1>
-{{ text }}
-
-
+<img src='images/ReadFile.png' />
 
 
 
@@ -816,13 +825,10 @@ _________________________________ <b>text.html</b> _____________________________
 <slide>
 <pre><h1>Write File</h1>
 Write a log of page hits to a file
-
 _________________________________ <b>urls.py</b>  ______________________________
 
-from django.conf.urls import patterns,url
-
 urlpatterns = patterns('',
-    url(r'^(?P<path>[\w]+)$',      'buymore.views.record_view'),
+    url(r'^(?P< path >[\w]+)$',      'buymore.views.record_view'),
 )
 _________________________________ <b>views.py</b> ______________________________
 
@@ -838,10 +844,6 @@ def record_view (request, path):
     log (request.user, path)
     return HttpResponseRedirect('Home')
 
-
-
-
-
 </pre> </slide>
 
 <slide>
@@ -849,16 +851,10 @@ def record_view (request, path):
 Execute some system command
 
 _________________________________ <b>urls.py</b>  ______________________________
-
-from django.conf.urls import patterns,url
-
 urlpatterns = patterns('',
-    url(r'^(?P<command>[\w]+)$',      'buymore.views.execute_view'),
+    url(r'^(?P< command >[\w]+)$',      'buymore.views.execute_view'),
 )
 _________________________________ <b>views.py</b> ______________________________
-
-from django.shortcuts   import render
-
 def do_command (command):
     return  Popen(command.split(),stdout=PIPE).stdout.read()
 
@@ -867,6 +863,11 @@ def execute_view (request, command):
     return render(request, 'text.html', {'command': command, 'text': results})
 
 _________________________________ <b>text.html</b> ______________________________
+<img src='images/ExecuteScript.png' />
+
+
+
+
 
 <h1>Results of {{ command }}</h1>
 {{ text }}
@@ -936,34 +937,12 @@ urlpatterns = patterns(
 <pre><h1>Login/Logout</h1>
 
 from django.conf.urls import patterns, include, url
-from django.contrib import admin
-from os.path import join
-
-from Hammer.settings import STATICFILES_DIRS
-
-admin.autodiscover()
-
-static_dir = {'document_root': STATICFILES_DIRS[0]}
 
 urlpatterns = patterns(
     '',
 
-    # static files
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', static_dir),
-
-    # admin
-    url(r'^admin/',   include(admin.site.urls)),
     url(r'^login$',   'django.contrib.auth.views.login'),
     url(r'^logout$',  'django.contrib.auth.views.logout'),
-
-    # doc views
-    url(r'^$',                              'doc.views.home'),
-    url(r'^(?P<title>[\w\-_./]+)/missing$', 'doc.views.missing'),
-    url(r'^(?P<title>[\w\-_./]+)/(?P<template>[\w\-_./]+)/add$',  'doc.views.add'),
-    url(r'^(?P<title>[\w\-_./]+)/edit$',    'doc.views.edit'),
-    url(r'^(?P<title>[\w\-_./]+)/delete$',  'doc.views.delete'),
-    url(r'^(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
-
 )
 
 </pre> </slide>
@@ -976,9 +955,7 @@ urlpatterns = patterns(
 
 <slide>
 <pre><h1>Edit User</h1>
-
-
-<img src='images/Edit.jpg'/>
+<img src='images/EditUser.jpg'/>
 
 
 
@@ -1082,6 +1059,66 @@ Bind the web app to the domain
  $ ssh $host 'git pull'
 
 
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Follow Up</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Source Code</h1>
+
+Clone my project
+http://github.com/Mark-Seaman/Django-Hammer
+
+mark.seaman@shrinking-world.com
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Help Me</h1>
+
+Help me build something great!
+
+ * New languages & frameworks
+ * New features
+ * User Guide
+ * Developers Guide
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Django Docs</h1>
+
+
+djangoproject.com
+
+djangobook.com
+
+Test Driven Web Development with Python - Harry Percival
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Related Topics</h1>
+
+Git - Version Control
+
+Refactoring - Martin Fowler
+
+Test Driven Development - Kent Beck
+
+Pragmatic Thinking & Learning - Andy Hunt
 
 </pre> </slide>
 

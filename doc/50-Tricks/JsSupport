@@ -1,12 +1,34 @@
 * Js Support *                 -*-muse-*-
 Use industry standard JavaScript libraries
 
+<img src='images/JavaScript.png' />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
-<head>
-    <script src="{{ STATIC_URL }}jquery-latest.js"></script>
-</head>
+    <head>
+        <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+    </head> 
+    <body>
 
+    </body>
+</html>
 
 
 

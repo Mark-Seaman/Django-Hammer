@@ -1,11 +1,9 @@
 * Delete Record *                 -*-muse-*-
 Delete one or more objects
 
-
 class Note (models.Model):
     title = models.CharField (max_length=200)
     body  = models.TextField ()
-
 
 def delete_all_notes():
     for n in Note.objects.all():

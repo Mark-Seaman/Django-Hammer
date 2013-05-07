@@ -11,8 +11,3 @@ def modify_note(title,body):
     n = Note.objects.get(title=title)
     n.body = body
     n.save()
-
-
-
-
-
