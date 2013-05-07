@@ -5,11 +5,13 @@ from files import read_input
 from re import IGNORECASE,DOTALL,compile
 from subprocess import Popen,PIPE
 
+slide_src = '../doc/50-Tricks/'
+header = 'template/bin/header.html'
+footer = 'template/bin/footer.html'
+
 # Global page being built
 page  = [ ]
 first = True
-header = 'template/bin/header.html'
-footer = 'template/bin/footer.html'
 
 bridge_str = \
 '''<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
@@ -72,9 +74,7 @@ def wiki_text (filename):
 
 # Process one line of text
 def print_slide(filename):
-    #print 'print:','slides/50-Tricks/'+filename
-    #text = open('slides/50-Tricks/'+filename).read()
-    text = wiki_text('slides/50-Tricks/'+filename)
+    text = wiki_text(slide_src+filename)
     text = '<pre>'+text+'</pre>'
     print '<slide>\n',text,'</slide>\n'
 

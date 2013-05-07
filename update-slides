@@ -1,17 +1,17 @@
 #!/bin/bash
 # Sling slides
 
-x=50-Tricks
 
 # Go to the directory
-cd ~/Projects/django-hammer/slides
+x=50-Tricks
 echo "Updating slides $x ..."
 
 # Create the presentation
-cat slides/$x/Title slides/$x/Slides | python ./template/bin/thumpSlides.py  > $x/$x.html 
+cd ~/Projects/django-hammer/slides
+cat ../doc/$x/Title ../doc/$x/Slides | 
+template/bin/thumpSlides.py  > $x/$x.html 
 
 # Run the presentation
-cd ~/Projects/django-hammer/slides/50-Tricks
-w 50-Tricks.html
+w 50-Tricks/50-Tricks.html
 #present
 
