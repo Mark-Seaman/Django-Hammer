@@ -944,6 +944,21 @@ urlpatterns = patterns(
 </pre> </slide>
 
 <slide>
+<pre><h1>Enforcing Security</h1>
+
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='/login')
+
+def home(request):
+    return doc(request, 'Index')
+
+
+
+
+</pre> </slide>
+
+<slide>
 <pre><h1>Show Model Details</h1>
 <img src='images/Details.jpg'/>
 
@@ -963,21 +978,6 @@ urlpatterns = patterns(
 
 
 <img src='images/User.jpg'/>
-
-
-
-</pre> </slide>
-
-<slide>
-<pre><h1>Enforcing Security</h1>
-
-from django.contrib.auth.decorators import login_required
-
-@login_required(login_url='/login')
-
-def home(request):
-    return doc(request, 'Index')
-
 
 
 
@@ -1070,6 +1070,9 @@ Bind the web app to the domain
 
 Clone my project
 http://github.com/Mark-Seaman/Django-Hammer
+
+<b>Python Web Developers</b> - 50 Tricks in Django
+http://shrinking-world.org/media/slides/50-Tricks.html
 
 mark.seaman@shrinking-world.com
 
