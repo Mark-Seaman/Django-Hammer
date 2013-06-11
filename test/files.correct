@@ -111,3 +111,7 @@ hammer-write.correct
 hammer-write.diff
 hammer-write.out
 hammer-write.tst
+update.correct
+update.diff
+update.out
+update.tst
