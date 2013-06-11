@@ -1,12 +1,13 @@
 
 hammer-list
-[[AutomatedTests][AutomatedTests]]
+[[50-Tricks][50-Tricks]]
 [[Index][Index]]
-[[ProjectContext][ProjectContext]]
-[[ProjectSetup][ProjectSetup]]
+[[MissingFile][MissingFile]]
+[[slide_config.js][slide_config.js]]
+[[template][template]]
 
 hammer-list test
-No directory found, /home/seaman/Projects/jack-hammer/doc/test
+No directory found, /home/seaman/Projects/django-hammer/doc/test
 
 hammer-list seaman1
-No directory found, /home/seaman/Projects/jack-hammer/doc/seaman1
+No directory found, /home/seaman/Projects/django-hammer/doc/seaman1

@@ -1,6 +1,8 @@
 #!/bin/bash
 # Test the hammer-execute command script
 
-hammer-execute seaman1/jobs/resume/Index | grep -v 'Results from'
+hammer-execute
+hammer-execute Index
+hammer-execute MissingFile
 hammer-execute xxx.tst
 

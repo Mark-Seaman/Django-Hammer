@@ -26,9 +26,10 @@ exit 0
 
 # Handle missing page
 [[ ! -f "$pd/$d" ]]     && 
-hammer-add $d           && 
+echo "Missing page $d"  && 
 exit 0
 
 #Formatter is written in python
 hammer-wiki < "$pd/$d"
+
 

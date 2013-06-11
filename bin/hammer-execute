@@ -11,7 +11,10 @@ cmd=$p/doc/$doc
 echo "No command: $cmd" && 
 exit 1
 
+# Select the command
+[[ -d "$cmd" ]]   && 
+echo "Directory cannot be executed: $cmd" && 
+exit 1
+
 # Execute the command
 $cmd 
-
-
