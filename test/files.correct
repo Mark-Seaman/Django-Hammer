@@ -1,21 +1,34 @@
-/home/seaman/Projects/jack-hammer/README.md
+/home/seaman/Projects/django-hammer/present
+/home/seaman/Projects/django-hammer/README.md
+/home/seaman/Projects/django-hammer/run
+/home/seaman/Projects/django-hammer/slide-text
+/home/seaman/Projects/django-hammer/update-slides
 
-/home/seaman/Projects/jack-hammer:
+/home/seaman/Projects/django-hammer:
 app
 bin
 doc
+present
 README.md
+run
+slides
+slide-text
 test
+update-slides
 
-/home/seaman/Projects/jack-hammer/app:
-app.js
-files.js
-node_modules
-test-app.js
-thot.js
-views
+/home/seaman/Projects/django-hammer/app:
+app.log
+doc
+Hammer
+hammer.db
+http.conf
+manage.py
+media
+static
+templates
+user_doc
 
-/home/seaman/Projects/jack-hammer/bin:
+/home/seaman/Projects/django-hammer/bin:
 commit
 create
 e
@@ -47,13 +60,19 @@ tst
 w
 wiki-html-content
 
-/home/seaman/Projects/jack-hammer/doc:
-AutomatedTests
+/home/seaman/Projects/django-hammer/doc:
+50-Tricks
 Index
-ProjectContext
-ProjectSetup
+MissingFile
+slide_config.js
+template
 
-/home/seaman/Projects/jack-hammer/test:
+/home/seaman/Projects/django-hammer/slides:
+50-Tricks
+slide_config.js
+template
+
+/home/seaman/Projects/django-hammer/test:
 app.log
 data
 docs.correct
