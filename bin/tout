@@ -1,0 +1,5 @@
+#!/bin/bash
+# Show the results from the test that was run
+
+f=${1/\.tst/}
+cat $p/test/$f.out

@@ -1,0 +1,5 @@
+#!/bin/bash
+# Save the wiki text for the requested file
+
+cat > $1
+

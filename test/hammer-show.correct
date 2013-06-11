@@ -1,0 +1,188 @@
+
+hammer-show
+<br/> <h1>Jack Hammer</h1>
+<br/> 
+<br/> Framework for microprojects
+<br/> 
+<br/> Provides:
+<ul><li>rapid context switch</li></ul>
+<ul><li>automatic test framework</li></ul>
+<ul><li>instance code sharing</li></ul>
+<ul><li>extensible custom commands</li></ul>
+<br/> 
+<br/>  <a href="ProjectContext">ProjectContext</a> 
+<br/>  <a href="AutomatedTests">AutomatedTests</a> 
+<br/>  <a href="ProjectSetup">ProjectSetup</a> 
+<br/>  <a href="PersonalizedCommands">PersonalizedCommands</a> 
+<br/>  <a href="DataTypeFactory">DataTypeFactory</a> 
+<br/> 
+<br/> <b>rapid context switch</b>
+<br/> 
+<br/> A single command sets root directory, command path, and variables
+<br/> All commands relate to the current project
+<br/> 5 second context
+<br/> 
+<ul><li>project</li></ul>
+<ul><li>run</li></ul>
+<ul><li>dirs</li></ul>
+<br/> 
+<br/> 
+<br/> <b>automatic test framework</b>
+<br/> 
+<br/> Command run all available tests
+<br/> Creating, running, and viewing test results
+<br/> 
+<ul><li>tst, trun, tfail, tresults</li></ul>
+<ul><li>tout, tdiff, tlike</li></ul>
+<ul><li>tnew, tshow, tlist, te</li></ul>
+<br/> 
+<br/> 
+<br/> <b>instant project setup</b>
+<br/> 
+<br/> Create new archive and directory structure
+<br/> Clone command for new project
+<br/> 
+<ul><li>commit</li></ul>
+<ul><li>changes</li></ul>
+<ul><li>create</li></ul>
+<ul><li>clone</li></ul>
+<ul><li>proot, pbin, ptest, pdoc, papp</li></ul>
+<br/> 
+<br/> 
+<br/> <b>extensible custom commands</b>
+<br/> 
+<br/> Create and modify project related commands
+<br/> Instant access for all scripts
+<br/> 
+<ul><li>show</li></ul>
+<ul><li>ew</li></ul>
+<ul><li>todo</li></ul>
+<ul><li>exe</li></ul>
+<br/> 
+<br/> 
+<br/> <b>data type factory</b>
+<br/> 
+<br/> Support any data type by creating canonical operations
+<br/> 
+<ul><li>factory</li></ul>
+<ul><li>list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; l</li></ul>
+<ul><li>detail&nbsp;&nbsp;&nbsp;&nbsp;   s</li></ul>
+<ul><li>edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e</li></ul>
+<ul><li>new&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  n</li></ul>
+<ul><li>delete&nbsp;&nbsp;&nbsp;&nbsp;   d</li></ul>
+<br/> 
+<br/> 
+<br/> See also   <a href="HammerTutorial">HammerTutorial</a> 
+<br/> 
+
+hammer-show Index
+<br/> <h1>Jack Hammer</h1>
+<br/> 
+<br/> Framework for microprojects
+<br/> 
+<br/> Provides:
+<ul><li>rapid context switch</li></ul>
+<ul><li>automatic test framework</li></ul>
+<ul><li>instance code sharing</li></ul>
+<ul><li>extensible custom commands</li></ul>
+<br/> 
+<br/>  <a href="ProjectContext">ProjectContext</a> 
+<br/>  <a href="AutomatedTests">AutomatedTests</a> 
+<br/>  <a href="ProjectSetup">ProjectSetup</a> 
+<br/>  <a href="PersonalizedCommands">PersonalizedCommands</a> 
+<br/>  <a href="DataTypeFactory">DataTypeFactory</a> 
+<br/> 
+<br/> <b>rapid context switch</b>
+<br/> 
+<br/> A single command sets root directory, command path, and variables
+<br/> All commands relate to the current project
+<br/> 5 second context
+<br/> 
+<ul><li>project</li></ul>
+<ul><li>run</li></ul>
+<ul><li>dirs</li></ul>
+<br/> 
+<br/> 
+<br/> <b>automatic test framework</b>
+<br/> 
+<br/> Command run all available tests
+<br/> Creating, running, and viewing test results
+<br/> 
+<ul><li>tst, trun, tfail, tresults</li></ul>
+<ul><li>tout, tdiff, tlike</li></ul>
+<ul><li>tnew, tshow, tlist, te</li></ul>
+<br/> 
+<br/> 
+<br/> <b>instant project setup</b>
+<br/> 
+<br/> Create new archive and directory structure
+<br/> Clone command for new project
+<br/> 
+<ul><li>commit</li></ul>
+<ul><li>changes</li></ul>
+<ul><li>create</li></ul>
+<ul><li>clone</li></ul>
+<ul><li>proot, pbin, ptest, pdoc, papp</li></ul>
+<br/> 
+<br/> 
+<br/> <b>extensible custom commands</b>
+<br/> 
+<br/> Create and modify project related commands
+<br/> Instant access for all scripts
+<br/> 
+<ul><li>show</li></ul>
+<ul><li>ew</li></ul>
+<ul><li>todo</li></ul>
+<ul><li>exe</li></ul>
+<br/> 
+<br/> 
+<br/> <b>data type factory</b>
+<br/> 
+<br/> Support any data type by creating canonical operations
+<br/> 
+<ul><li>factory</li></ul>
+<ul><li>list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; l</li></ul>
+<ul><li>detail&nbsp;&nbsp;&nbsp;&nbsp;   s</li></ul>
+<ul><li>edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e</li></ul>
+<ul><li>new&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  n</li></ul>
+<ul><li>delete&nbsp;&nbsp;&nbsp;&nbsp;   d</li></ul>
+<br/> 
+<br/> 
+<br/> See also   <a href="HammerTutorial">HammerTutorial</a> 
+<br/> 
+
+hammer-show __App__/Index
+__App__/Index
+/home/seaman/Projects/jack-hammer/doc/__App__/Index
+xxx
+<br/> <h1>Missing page</h1>
+<br/> [[__App__/Index/edit][Create page __App__/Index]]
+<br/> 
+<br/> 
+
+hammer-show __App__
+__App__
+/home/seaman/Projects/jack-hammer/doc/__App__
+xxx
+<br/> <h1>Missing page</h1>
+<br/>  <a href="__App__/edit">Create page __App__</a> 
+<br/> 
+<br/> 
+
+hammer-show seaman1
+seaman1
+/home/seaman/Projects/jack-hammer/doc/seaman1
+xxx
+<br/> <h1>Missing page</h1>
+<br/>  <a href="seaman1/edit">Create page seaman1</a> 
+<br/> 
+<br/> 
+
+hammer-show seaman1/Index
+seaman1/Index
+/home/seaman/Projects/jack-hammer/doc/seaman1/Index
+xxx
+<br/> <h1>Missing page</h1>
+<br/> [[seaman1/Index/edit][Create page seaman1/Index]]
+<br/> 
+<br/> 

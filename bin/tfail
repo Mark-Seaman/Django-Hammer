@@ -1,0 +1,14 @@
+#!/bin/bash
+# List the failed tests
+
+
+cd $p/test
+{
+    for f in *.tst
+    do 
+        [[ ! -z `tdiff $f` ]] && echo FAILED: ${f/.tst/}
+    done
+} | tee fail
+
+echo `wc -l  fail` tests failed
+rm fail

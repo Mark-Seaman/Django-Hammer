@@ -1,0 +1,25 @@
+#!/bin/bash
+# Edit a file
+
+# Use gedit by default  (comment these two lines to use emacs instead)
+#rbg gedit $* && exit 
+
+# Check to see if emacs is already running
+process=`ps -ef|grep -v grep|grep emacs`
+if [ -z "$process" ]
+then
+    echo 'Starting emacs'
+    rbg /usr/bin/emacs "$*" 
+else
+    # Treat each argument as an edit request
+    line=""
+	for f in $*
+    do
+        # Use : to indicate line numbers
+        line="$line `echo $f|sed 's/\(.*\):\(.*\)/+\2 \1/'`"
+        echo "$line"
+    done
+    # echo "emacs $line"
+    rbg emacsclient $line
+fi
+

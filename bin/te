@@ -1,0 +1,4 @@
+#!/bin/bash
+# Test edit
+echo Test edit
+e $p/test/$1.tst

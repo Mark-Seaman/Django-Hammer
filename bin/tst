@@ -1,0 +1,20 @@
+#!/bin/bash
+# Run all system tests
+
+# Go to test directory
+cd $p/test
+
+# Remove temp files
+find $p -name '*~' -exec rm '{}' \;
+
+# Run every test
+echo "Run all tests"
+for f in *.tst 
+do
+    f=${f/.tst/}
+    echo "Running... $f"
+    trun $f
+done
+
+echo "Results:"
+tfail

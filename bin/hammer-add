@@ -1,0 +1,17 @@
+#!/bin/bash
+# Return the wiki text from the requested file
+
+
+cd $p/doc
+d=$1
+
+echo $1
+echo "$pd/$d"
+[[ ! -f "$pd/$d" ]]     && echo xxx
+# Add missing page
+[[ ! -f "$pd/$d" ]]     && 
+echo "* Missing page * 
+[[$d/edit][Create page $d]]
+" | hammer-wiki
+
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+# Create a new test
+
+cd $p/test
+cmdname=$1
+comment=$2
+command=$3
+t=$cmdname.tst
+
+[[ ! -x "$t" ]] &&
+cat <<EOF  > $t
+#!/bin/bash
+# $comment
+
+$command
+
+EOF
+
+chmod +x  $t
+e $t
+

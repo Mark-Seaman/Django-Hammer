@@ -1,0 +1,12 @@
+
+hammer-list
+[[AutomatedTests][AutomatedTests]]
+[[Index][Index]]
+[[ProjectContext][ProjectContext]]
+[[ProjectSetup][ProjectSetup]]
+
+hammer-list test
+No directory found, /home/seaman/Projects/jack-hammer/doc/test
+
+hammer-list seaman1
+No directory found, /home/seaman/Projects/jack-hammer/doc/seaman1

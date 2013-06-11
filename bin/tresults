@@ -1,0 +1,16 @@
+#!/bin/bash
+# Compare the last output with the correct output
+
+# Go to directory
+cd $p/test
+
+# Loop over all of the tests
+for f in *.tst
+do 
+    x=`tdiff $f`
+    [[ ! -z "$x" ]]                                             &&
+    echo '----------------------------------------------------' &&
+    echo "                       $f                           " &&
+    echo '----------------------------------------------------' &&
+    tdiff $f
+done

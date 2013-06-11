@@ -1,0 +1,5 @@
+#!/bin/bash
+# Run the default web browser
+echo Run the default web browser
+
+rbg /opt/google/chrome/google-chrome $*

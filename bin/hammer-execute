@@ -1,0 +1,17 @@
+#!/bin/bash
+# Execute a command script
+
+# Remove the .tst
+f=${1/.tst/}
+doc=$1
+cmd=$p/doc/$doc
+
+# Select the command
+[[ ! -x "$cmd" ]]   && 
+echo "No command: $cmd" && 
+exit 1
+
+# Execute the command
+$cmd 
+
+

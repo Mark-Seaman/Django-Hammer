@@ -1,0 +1,7 @@
+#!/bin/bash
+# List the available tests
+
+cd $p/test
+ls *.tst | while read t; do echo ${t/\.tst/}; done
+
+

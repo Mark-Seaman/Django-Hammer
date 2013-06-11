@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# List a directory as a page
+
+from os.path import join,exists
+from os import listdir, environ
+from sys import argv
+
+d = ''
+if len(argv)>1: d = argv[1]
+
+dir=join(environ['p'], 'doc',d)
+if exists(dir):
+    for f in listdir(dir):
+        print  "[[%s][%s]]" % (join(d,f),f)
+else:
+    print 'No directory found, %s' % dir

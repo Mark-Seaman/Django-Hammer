@@ -1,0 +1,11 @@
+#!/bin/bash
+# Accept the currect results as the correct answer
+
+# Choose the correct directory
+cd $p
+[[ -d test ]] && cd test
+f=${1/\.tst/}   
+echo Accept results from $f.tst
+cp $f.out $f.correct
+rm $f.diff
+touch $f.diff

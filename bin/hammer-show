@@ -1,0 +1,34 @@
+#!/bin/bash
+# Return the wiki text from the requested file
+
+
+cd $p/doc
+d=$1
+[[ "$1" = "" ]]         && 
+d='Index'
+
+# Handle directories
+[[ -d "$pd/$d" ]]       && 
+if [[ -f "$pd/$d/Index" ]] 
+then
+    hammer-wiki < "$pd/$d/Index" && 
+    exit 0
+else
+    hammer-list "$1"    | 
+    hammer-wiki         && 
+    exit 0
+fi
+
+# Handle scripts
+[[ -x "$pd/$d" ]]       && 
+hammer-execute $d       &&
+exit 0
+
+# Handle missing page
+[[ ! -f "$pd/$d" ]]     && 
+hammer-add $d           && 
+exit 0
+
+#Formatter is written in python
+hammer-wiki < "$pd/$d"
+

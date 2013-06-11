@@ -1,0 +1,12 @@
+#!/bin/bash
+# Save the wiki text for the requested file
+
+# Set the file path
+f=$p/doc/$1
+
+# Make directory if needed
+mkdir -p `dirname $f` 
+
+# Put stdin into file
+cat > $f
+

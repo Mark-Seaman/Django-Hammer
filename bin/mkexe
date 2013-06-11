@@ -1,0 +1,18 @@
+#!/bin/bash
+# Create a new command script
+
+cmdname=$1
+comment=$2
+command=$3
+
+[[ ! -x "$p/bin/$cmdname" ]] &&
+cat <<EOF  > $p/bin/$cmdname
+#!/bin/bash
+# $comment
+
+$command
+
+EOF
+
+chmod +x  $p/bin/$cmdname
+e $p/bin/$cmdname

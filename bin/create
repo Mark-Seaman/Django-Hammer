@@ -1,0 +1,6 @@
+#!/bin/bash
+# Create a new Jack Hammer project
+
+[[ "$1" == "" ]] && echo "usage: create project" && exit 1
+cptree ~/Projects/jack-hammer ~/Projects/$1
+rm -rf ~/Projects/$1/.git

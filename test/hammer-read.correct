@@ -1,0 +1,74 @@
+No file found: /home/seaman/Projects/jack-hammer/doc/seaman1/Index
+* Jack Hammer *
+
+Framework for microprojects
+
+Provides:
+ * rapid context switch
+ * automatic test framework
+ * instance code sharing
+ * extensible custom commands
+
+ProjectContext
+AutomatedTests
+ProjectSetup
+PersonalizedCommands
+DataTypeFactory
+
+**rapid context switch**
+
+A single command sets root directory, command path, and variables
+All commands relate to the current project
+5 second context
+
+ * project
+ * run
+ * dirs
+
+
+**automatic test framework**
+
+Command run all available tests
+Creating, running, and viewing test results
+
+ * tst, trun, tfail, tresults
+ * tout, tdiff, tlike
+ * tnew, tshow, tlist, te
+
+
+**instant project setup**
+
+Create new archive and directory structure
+Clone command for new project
+
+ * commit
+ * changes
+ * create
+ * clone
+ * proot, pbin, ptest, pdoc, papp
+
+
+**extensible custom commands**
+
+Create and modify project related commands
+Instant access for all scripts
+
+ * show
+ * ew
+ * todo
+ * exe
+
+
+**data type factory**
+
+Support any data type by creating canonical operations
+
+ * factory
+ * list         l
+ * detail       s
+ * edit         e
+ * new          n
+ * delete       d
+
+
+See also  HammerTutorial
