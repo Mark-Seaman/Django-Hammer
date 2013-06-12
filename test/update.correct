@@ -36,6 +36,18 @@ ____________________
 rbg
 ____________________
 run
+3c3
+< echo 'Show the Django Hammer app in a browser'
+---
+> echo 'Show the Jack Hammer app in a browser'
+11c11
+< rbg ./manage.py runserver 8089
+---
+> rbg node app.js
+15c15
+< rbg firefox localhost:8089
+---
+> rbg firefox localhost:8081
 ____________________
 show
 ____________________
