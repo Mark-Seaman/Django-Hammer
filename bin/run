@@ -1,6 +1,6 @@
 #!/bin/bash
 # Show the pipe scan home page
-echo 'Show the 4-thot app in a browser'
+echo 'Show the Django Hammer app in a browser'
 
 cd $p/app
 
@@ -8,9 +8,9 @@ cd $p/app
 killall node
 
 # Start the server
-rbg node app.js
+rbg ./manage.py runserver 8089
 sleep 1
 
 # Show the web page
-w localhost:8081
+rbg firefox localhost:8089
 
