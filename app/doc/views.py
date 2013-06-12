@@ -34,6 +34,7 @@ def home(request):
     Render the home view
     '''
     return doc(request, 'Index')
+    #return render(request, 'home.jade', {'title': 'my jade title', 'text': 'my text'})
 
 
 def redirect(title):
