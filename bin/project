@@ -27,7 +27,7 @@ $pt:\
 .
 
 # Show the banner
-reset
+#reset
 figlet 'Django Hammer'
 
 # Directory
