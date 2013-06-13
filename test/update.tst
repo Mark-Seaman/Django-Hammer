@@ -2,7 +2,9 @@
 # Check the platform files
 
 x=~/Projects/jack-hammer
-cd $pb
+
+
+cd $x/bin
 
 for f in `ls`
 do
@@ -12,8 +14,7 @@ do
 done
 
 
-
-cd $pt
+cd $x/test
 
 for f in `ls *.tst`
 do

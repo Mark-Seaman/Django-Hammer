@@ -10,7 +10,7 @@ if len(argv)>1: d = argv[1]
 
 dir=join(environ['p'], 'doc',d)
 if exists(dir):
-    for f in listdir(dir):
+    for f in sorted(listdir(dir)):
         print  "[[%s][%s]]" % (join(d,f),f)
 else:
     print 'No directory found, %s' % dir
