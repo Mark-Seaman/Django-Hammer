@@ -1,9 +1,0 @@
-#!/bin/bash
-# Start the django server
-
-cd ~/Projects/django-hammer/app
-rbg python manage.py runserver 8042 > app.log
-
-sleep 1
-nohup firefox localhost:8042 &> /dev/null &
-

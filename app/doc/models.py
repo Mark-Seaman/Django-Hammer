@@ -9,7 +9,7 @@ class Note (models.Model):
     '''
     Note data model
     '''
-    path  = models.CharField (max_length=200)
+    path  = models.CharField (max_length=200, editable=False)
     body  = models.TextField ()
 
 class NoteForm (ModelForm):
@@ -51,55 +51,46 @@ def clone_template(title):
         f.close()    
 
 
-def do_command(cmd):
+def do_command(cmd, input=None):
     '''
     Run the command as a process and capture stdout & print it
     '''
-    return  Popen(cmd.split(),stdout=PIPE).stdout.read()
-
-
-def is_special_doc(title):
-    '''
-    Pick out the special docs
-    '''
-    return False
+    if input:
+        p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
+        p.stdin.write(input)
+        p.stdin.close()
+    else:
+        p = Popen(cmd.split(), stdout=PIPE)
+    return  p.stdout.read()
 
     
 def is_doc(title):
     '''
     Look for the document
     '''
-    return is_special_doc(title) or exists(doc_file(title))     
-
-
-def list_docs(folder='.'):
-    '''
-    Return the doc in the requested folder
-    '''
-    return listdir(doc_file(folder))
+    return exists(doc_file(title))     
 
 
 def format_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    if is_special_doc(title):
-        return special_doc_command(title)   
-    return do_command('wiki-html-content '+doc_file(title))
+    return do_command('hammer-show %s'%title)
 
 
 def read_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    return open(doc_file(title)).read()
+    return do_command('hammer-read %s'%title)
 
 
 def write_doc(title,body):
     '''
     Save the document file
     '''
-    return  open(doc_file(title), 'wt').write(body)
+    body = body.replace('\r','')
+    do_command('hammer-write %s'%title, body)
 
 
 def delete_doc(title):

@@ -1,0 +1,9 @@
+<html>
+  <body>
+    <form action="ask" method="post">{% csrf_token %}
+      <p>What is your name?</p>
+      <input name='myname' type='text'></input>
+      <button type="submit" value="OK">OK</button>
+    </form>
+  </body>
+</html>
