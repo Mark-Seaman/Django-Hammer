@@ -1,0 +1,5 @@
+#!/bin/bash
+# Find text in source code
+
+grep $* $p/bin/* $p/app/* $p/test/*
+

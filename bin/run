@@ -1,16 +1,9 @@
 #!/bin/bash
-# Show the pipe scan home page
-echo 'Show the Django Hammer app in a browser'
+# Start the django server
 
-cd $p/app
+cd $pa
+rbg python manage.py runserver 8042 > app.log
 
-# Kill the old process
-killall node
+sleep 3
 
-# Start the server
-rbg ./manage.py runserver 8089
-sleep 1
-
-# Show the web page
-rbg firefox localhost:8089
-
+rbg firefox localhost:8042/Index

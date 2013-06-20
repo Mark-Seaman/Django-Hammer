@@ -1,0 +1,8 @@
+#!/bin/bash
+# Run tasks hourly
+
+cd $HOME/Projects/thumper/bin
+[ `hostname` != 'seaman-chute' ] && exit 0
+. ./project
+(echo '----------------------------------------------------------';date;tst) >> $pa/hourly.log
+

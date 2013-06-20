@@ -1,0 +1,33 @@
+#!/bin/bash
+# Setup the bashrc environment
+
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+echo 'Running bashrc'
+
+
+# Update the rc files
+alias rc='. ~/.bashrc'
+
+# Enable the bash prompt 
+[[ -f ~/bin/bash-prompt ]] && . ~/bin/bash-prompt
+
+# Enable the bash shell completion
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
+
+# Welcome message
+[[ -f ~/bin/welcome ]] && cat ~/bin/welcome
+
+# Variables
+[[ -f ~/bin/bash-vars ]] &&  . ~/bin/bash-vars
+
+# Alias definitions.
+[[ -f ~/bin/bash-alias ]] && . ~/bin/bash-alias
+
+# Host specific file
+[[ -f ~/bin/bash-user ]] &&  . ~/bin/bash-user
+
+# Start in home directory
+cd $sac

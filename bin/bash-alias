@@ -1,0 +1,85 @@
+#!/bin/bash
+# Bash shell aliases and functions
+
+alias al='watch hostname'
+alias b="clear; popd; ls"              # Go back to a directory
+alias cn=cmd-new
+alias destroy='rm -rf'
+alias df='df -h'
+alias dj='python $sac/manage.py'
+alias ea='e ~/bin/bash-alias'
+alias ev='e  ~/bin/bash-vars'
+alias f='find  . -type f  2>/dev/null|grep '
+alias fd='find . -type d 2>/dev/null|grep'
+alias fn='find . -mtime -1 2>/dev/null'
+alias g=grep
+alias gac='git add -A .; gc'
+alias gas='git add -A .; reset; git status'
+alias gco='git checkout'
+alias gcp='git cherry-pick'
+alias gd='git diff'
+alias gk='rbg gitk --all'
+alias gmt='git mergetool -t meld'
+alias gmv='git mv'
+alias gre='git reset HEAD'
+alias grh='git reset --hard'
+alias grm='git rm'
+alias gs='clear;git status'
+alias gsa='git stash apply'
+alias gsc='git stash clear'
+alias gsl='git stash list'
+alias gsp='git stash pop'
+alias gss='git stash save'
+alias gv='grep -v'
+alias h='history|tail -20'
+alias he='head -70'
+alias ip='ifconfig|grep "inet "'
+alias l='clear;ls'
+alias la='clear;ls -Al'
+alias lc='wc -l' 
+alias le='less'
+alias ll='ls -l'
+alias lt='reset;tree -d -L 2'
+alias m='manage.py'
+alias networkscan='nmap -sP 192.168.1.0/24'
+alias p='python'
+alias path='echo $PATH | perl -pi -e s/:/\\n/g'
+alias pick='git cherry-pick'
+alias psg='ps -ef|grep -v grep|grep '
+alias pull='git pull'
+alias push='git pull && git push'
+alias r=reset
+alias rc='cp ~/bin/bashrc ~/.bashrc; . ~/.bashrc; cd -'
+alias recent='find . -mtime -1 -type f -exec ls -l {} \;'
+alias restart='~/webapps/simpleapps/apache2/bin/restart'
+alias scm='sc-money-show'
+alias space='du -h --max-depth=1'      # show disk space used
+alias sta='sc-test-accept'
+alias stf='grep FAIL $sut/results'
+alias str='sc-test-results'
+alias stv='sc-test-verify'
+alias stc='sc-test-check'
+alias sur="cd $su/"
+alias sua="cd $su/data/accounting"
+alias suc="cd $su/webapps/django/support"
+alias sud="cd $su/data"
+alias sui="cd $sud/inbox"
+alias sul="cd $su/logs/user"
+alias sue="cd $sud/problems/engineer"
+alias sum="cd $sud/problems/money"
+alias sup="cd $sud/problems"
+alias sus="cd $su/scripts"
+alias sut="cd $su/test"
+alias syncdb='manage.py syncdb'
+alias ta='tail -70'
+alias u='clear; cd ..; ls'             # go up a directory
+
+function d          { pushd "$1"; clear; ls; }  # Push a directory
+function ga         { git add $*; git status; }
+function gc         { git commit -m "$*"; git status; }
+function go         { 8g $1.go; 8l $1.8; 8.out; }
+function gr         { grep -r --exclude-dir=platform-git $* . 2>/dev/null|grep -v 'Binary file' ; }
+function pid        { echo `ps -ef|grep $1|egrep -v grep\|pid |awk '{print \$2;}'`; }
+function treediff   { t=/tmp/diff; tree -dL 3 $1 > $t\1; tree -dL 3 $2 > $t\2; diff $t\1 $t\2; }
+function v          { cat - > /tmp/v.$$;e /tmp/v.$$; }
+

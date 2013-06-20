@@ -1,0 +1,11 @@
+#!/bin/bash
+# Move staging docs to production
+
+cd $p                   &&
+git checkout staging    &&
+git pull                &&
+git checkout master     &&
+git pull                &&
+git merge staging       &&
+rsync -auv doc/__Staging__/ doc/__App__  &&
+echo 'Promotion successful'

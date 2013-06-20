@@ -1,0 +1,11 @@
+#!/bin/bash
+# Move staging docs to production
+
+cd $p                   &&
+git checkout master     &&
+git pull                &&
+git checkout staging    &&
+git pull                &&
+git merge master        &&
+rsync -auv doc/__App__/ doc/__Staging__  &&
+echo 'Demotion successful'

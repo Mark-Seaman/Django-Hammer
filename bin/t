@@ -1,0 +1,13 @@
+#!/bin/bash
+# Run a teminal window and login to the remote machine
+
+host=$1
+[[ "$1" == "" ]] && host="$sa"
+
+echo "Connecting to $1"
+echo "ssh $host" > /tmp/target  
+
+# bring up a shell in a gray window
+chmod 700 /tmp/target
+gnome-terminal --window-with-profile=Target --geometry=90x45
+

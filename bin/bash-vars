@@ -1,0 +1,46 @@
+#!/bin/bash
+# Set all the shell variables that are needed to run support center
+
+# Use mountain time
+export TZ='America/Denver'
+export GIT_USER=`id -un`
+
+export p=$HOME
+export sa=$HOME
+export sab=$p/bin
+export sad=$HOME/doc
+export sac=$HOME/webapps/simpleapps/app
+export sap=$HOME/webapps/simpleapps/lib/python2.7
+export sat=$p/test
+
+alias sa="cd $p"
+alias sab="cd $sab"
+alias sac="cd $sac"
+alias sad="cd $sad"
+alias sad="cd $sad"
+alias sat="cd $sat"
+
+export ph=appthumper.com
+export pa=$p/webapps/simpleapps/app
+export pb=$p/bin
+export pd=$p/doc
+export pt=$p/test
+
+alias proot="cd $p"
+alias papp="cd $pa"
+alias pbin="cd $pb"
+alias pdoc="cd $pd"
+alias ptest="cd $pt"
+
+# Python Path
+export PYTHONPATH=$sap:$sap/django/bin
+
+# Path
+export PATH=\
+$sa/bin:\
+$sa/test:\
+$PYTHONPATH:\
+/usr/bin:\
+/sbin:\
+/bin:\
+.

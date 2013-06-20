@@ -1,0 +1,8 @@
+#!/bin/bash
+# Move staging docs to production
+
+cd $p                                       &&
+rsync -auv doc/__Staging__/ doc/__App__     &&
+git checkout doc/__App__/Index              &&
+git checkout doc/__App__/UserIndex          &&
+echo 'Release successful'

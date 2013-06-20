@@ -1,0 +1,5 @@
+#!/bin/bash
+# Show the remote web page
+
+echo Show the remote web page
+rbg firefox appthumper.com

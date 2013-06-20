@@ -1,0 +1,5 @@
+#!/bin/bash
+# Fix the line endings that come from edit fields
+
+mv $1 /tmp/fix-lines
+tr -d '\r' < /tmp/fix-lines > $1

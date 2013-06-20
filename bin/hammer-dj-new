@@ -1,0 +1,12 @@
+#!/bin/bash
+# Create a new hammer django project
+
+cd django-hammer/
+
+# Create the Django project
+django-admin startproject app
+
+# Create the apps for the project
+dj startapp doc
+dj startapp test
+dj startapp systest

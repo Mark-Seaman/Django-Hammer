@@ -1,0 +1,22 @@
+#!/bin/bash
+# Show the pipe scan home page
+
+echo 'Deploy code for $p to server'
+
+sac=webapps/simpleapps
+
+cd $p                               &&
+pwd                                 &&
+scp bin/bashrc $sa:.bashrc          &&
+scp bin/emacs.conf $sa:.emacs       &&
+cd $sac                             &&
+git add -A .                        &&
+git commit -m'Automatic deployment' ;
+git pull                            &&
+git push                            &&
+sa-do 'git pull'                    &&
+sa-restart                          &&
+web  
+
+# ssh $sa
+
