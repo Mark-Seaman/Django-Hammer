@@ -5,6 +5,7 @@ from os.path  import join
 from os import environ,chdir,system
 from platform import node
 
+port = '8089'
 host = 'localhost:8089'
 
 pages = '''
@@ -23,6 +24,6 @@ else:
     from page_test import test_web_pages
     print 'Testing Host:',host
     print 'Starting the server'
-    system ('server-stop && server-start')
+    system ('server-stop && server-start '+port)
     test_web_pages(host,pages)
     system ('server-stop>/dev/null')
