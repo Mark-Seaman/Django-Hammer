@@ -2,8 +2,8 @@
 # Start the django server
 
 cd $pa
-rbg python manage.py runserver 8042 > app.log
+rbg python manage.py runserver 8089 > app.log
 
 sleep 3
 
-rbg firefox localhost:8042/Index
+rbg firefox localhost:8089/Index

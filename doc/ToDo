@@ -1,4 +1,7 @@
-*To Do  *                 -*-muse-*-
+* To Do  *                 -*-muse-*-
+
+**Active**
+pass all product tests
 _____________________________________________________________________________
 
 **Communicate** - share
@@ -18,9 +21,8 @@ create a MVP feature list
 
 **Test** - verify
 
-deploy hammer over existing mybook app
-pass all product tests
 update.tst - verify platform dependencies
+deploy hammer over existing mybook app
 
 
 **Fix** - defects
@@ -43,5 +45,6 @@ create link to mybook documents
 clone domain handler in basic hammer
 feed improvements to other projects
 include improvements from other projects
+
 
 
