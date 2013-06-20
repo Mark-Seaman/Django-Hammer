@@ -1,32 +1,8 @@
-4a5
-> Logged in as, seaman. Log out
-4a5
-> Logged in as, seaman. Log out
-6,9c7,20
-< Please login
-< Username
-< Password
-< Or Register a new account
----
-> 
-> Welcome to Hammer
-> 
-> Meeting real world problems with simple solutions
-> 
-> Hammer is an application framework for creating web-based application quickly.
-> 
-> It is written in Django and Python.
-> 
-> Documents can be added automatically by referencing a Missing File.
-> 
-> LearnMore
-> 50 Tricks Presentation
-> My Book Online
 Testing Host: localhost:8089
 Starting the server
 Testing  ...
 PASS
 Testing login ...
-FAIL
+PASS
 Testing Index ...
-FAIL
+PASS
