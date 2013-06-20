@@ -1,4 +1,6 @@
 .
+./Index
+./MissingFile
 ./seaman
 ./seaman/50-Tricks
 ./seaman/50-Tricks/50-Tricks-Prep
@@ -87,3 +89,4 @@
 ./seaman/template/UserStory
 ./seaman/template/Weekly
 ./seaman/ToDo
+./ToDo

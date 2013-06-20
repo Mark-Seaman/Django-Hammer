@@ -4,6 +4,14 @@ ____________________
 create
 ____________________
 e
+4,6d3
+< # Run vi on remote server
+< [[ `hostname` == "web389.webfaction.com" ]] && vi $* && exit 0
+< 
+8c5
+< #rbg emacs $* && exit 
+---
+> #rbg gedit $* && exit 
 ____________________
 hammer-add
 ____________________
@@ -36,18 +44,30 @@ ____________________
 rbg
 ____________________
 run
-3c3
-< echo 'Show the Django Hammer app in a browser'
+2c2,3
+< # Start the django server
 ---
+> # Show the pipe scan home page
 > echo 'Show the Jack Hammer app in a browser'
-11c11
-< rbg ./manage.py runserver 8089
+4,5c5
+< cd $pa
+< rbg python manage.py runserver 8042 > app.log
 ---
+> cd $p/app
+7c7,15
+< sleep 3
+---
+> # Kill the old process
+> killall node
+> 
+> # Start the server
 > rbg node app.js
-15c15
-< rbg firefox localhost:8089
----
+> sleep 1
+> 
+> # Show the web page
 > rbg firefox localhost:8081
+9d16
+< rbg firefox localhost:8042/Index
 ____________________
 show
 ____________________
@@ -86,8 +106,18 @@ ____________________
 hammer-execute.tst
 ____________________
 hammer-list.tst
+12,13c12,13
+< show  hammer-list  seaman
+< show  hammer-list  seaman/mybook/Automate
+---
+> show  hammer-list  test
+> show  hammer-list  seaman1
 ____________________
 hammer-read.tst
+3a4
+> hammer-read 'seaman1/Index'
+5d5
+< hammer-read 'seaman/Index'
 ____________________
 hammer-show.tst
 ____________________
