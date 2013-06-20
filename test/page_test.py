@@ -122,7 +122,7 @@ def test_web_pages(host,pages):
     '''
     global browser
     browser = webdriver.Firefox()
-    browser.implicitly_wait(5)
+    browser.implicitly_wait(3)
     get_page_text(host,'')
     login(host,'xxx')
     for page in pages.split('\n'):

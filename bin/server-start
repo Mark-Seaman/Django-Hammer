@@ -3,7 +3,7 @@
 
 cd $pa
 rbg python manage.py runserver $1 > app.log
-sleep 3
+sleep 1
 
 
 
