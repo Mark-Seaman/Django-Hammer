@@ -1,4 +1,3 @@
-No file found: /home/seaman/Projects/django-hammer/doc/seaman1/Index
 * Welcome to Hammer *                                                   -*- muse -*-
 Meeting real world problems with simple solutions
 
@@ -10,5 +9,20 @@ Documents can be added automatically by referencing a Missing File.
 
 LearnMore
 [[50-Tricks/Index][50 Tricks Presentation]]
+[[mybook/][My Book Online]]
+
+
+* Welcome to Hammer *                                                   -*- muse -*-
+Meeting real world problems with simple solutions
+
+Hammer is an application framework for creating web-based application quickly.
+
+It is written in Django and Python.
+
+Documents can be added automatically by referencing a Missing File.
+
+LearnMore
+[[50-Tricks/Index][50 Tricks Presentation]]
+[[mybook/][My Book Online]]
 
 

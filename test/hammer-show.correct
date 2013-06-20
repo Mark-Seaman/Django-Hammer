@@ -11,6 +11,7 @@ hammer-show
 <br/> 
 <br/>  <a href="LearnMore">LearnMore</a> 
 <br/>  <a href="50-Tricks/Index">50 Tricks Presentation</a> 
+<br/>  <a href="mybook/">My Book Online</a> 
 <br/> 
 <br/> 
 <br/> 
@@ -27,18 +28,44 @@ hammer-show Index
 <br/> 
 <br/>  <a href="LearnMore">LearnMore</a> 
 <br/>  <a href="50-Tricks/Index">50 Tricks Presentation</a> 
+<br/>  <a href="mybook/">My Book Online</a> 
 <br/> 
 <br/> 
 <br/> 
-
-hammer-show __App__/Index
-Missing page __App__/Index
 
 hammer-show __App__
 Missing page __App__
 
-hammer-show seaman1
-Missing page seaman1
+hammer-show seaman
+<br/> <h1>Welcome to Hammer</h1>
+<br/> Meeting real world problems with simple solutions
+<br/> 
+<br/> Hammer is an application framework for creating web-based application quickly.
+<br/> 
+<br/> It is written in Django and Python.
+<br/> 
+<br/> Documents can be added automatically by referencing a Missing File.
+<br/> 
+<br/>  <a href="LearnMore">LearnMore</a> 
+<br/>  <a href="50-Tricks/Index">50 Tricks Presentation</a> 
+<br/>  <a href="mybook/">My Book Online</a> 
+<br/> 
+<br/> 
+<br/> 
 
-hammer-show seaman1/Index
-Missing page seaman1/Index
+hammer-show seaman/Index
+<br/> <h1>Welcome to Hammer</h1>
+<br/> Meeting real world problems with simple solutions
+<br/> 
+<br/> Hammer is an application framework for creating web-based application quickly.
+<br/> 
+<br/> It is written in Django and Python.
+<br/> 
+<br/> Documents can be added automatically by referencing a Missing File.
+<br/> 
+<br/>  <a href="LearnMore">LearnMore</a> 
+<br/>  <a href="50-Tricks/Index">50 Tricks Presentation</a> 
+<br/>  <a href="mybook/">My Book Online</a> 
+<br/> 
+<br/> 
+<br/> 
