@@ -49,14 +49,12 @@ run
 ---
 > # Show the pipe scan home page
 > echo 'Show the Jack Hammer app in a browser'
-4,5c5
-< cd $pa
-< rbg python manage.py runserver 8089 > app.log
+4,5c5,15
+< server-stop
+< server-start
 ---
 > cd $p/app
-7c7,15
-< sleep 3
----
+> 
 > # Kill the old process
 > killall node
 > 
@@ -66,7 +64,7 @@ run
 > 
 > # Show the web page
 > rbg firefox localhost:8081
-9d16
+7d16
 < rbg firefox localhost:8089/Index
 ____________________
 show
@@ -94,8 +92,6 @@ ____________________
 tshow
 ____________________
 tst
-____________________
-w
 ____________________
 docs.tst
 ____________________
