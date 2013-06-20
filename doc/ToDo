@@ -1,0 +1,47 @@
+*To Do  *                 -*-muse-*-
+_____________________________________________________________________________
+
+**Communicate** - share
+
+create a Project Summary
+create a User Guide
+
+
+**Learn** - problem
+
+
+**Plan** - solution
+
+develop a task list for first release
+create a MVP feature list
+
+
+**Test** - verify
+
+deploy hammer over existing mybook app
+pass all product tests
+update.tst - verify platform dependencies
+
+
+**Fix** - defects
+
+
+**Extend** - features 
+
+support private pages
+
+
+**Improve** - structure
+
+copy look and feel of mybook
+upgrade web site to python 2.7, django 1.5
+setup python 3.3 environment
+update web site to python 3.3
+setup automatic update of django-hammer projects
+remove old code from mybook app
+create link to mybook documents
+clone domain handler in basic hammer
+feed improvements to other projects
+include improvements from other projects
+
+

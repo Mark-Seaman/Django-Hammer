@@ -9,5 +9,5 @@ function show
 }
 
 show  hammer-list 
-show  hammer-list  test
-show  hammer-list  seaman1
+show  hammer-list  seaman
+show  hammer-list  seaman/mybook/Automate
