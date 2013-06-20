@@ -1,0 +1,9 @@
+#!/bin/bash
+# Start the local web server
+
+cd $pa
+rbg python manage.py runserver 8089 > app.log
+sleep 1
+
+
+

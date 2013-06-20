@@ -1,9 +1,7 @@
 #!/bin/bash
 # Start the django server
 
-cd $pa
-rbg python manage.py runserver 8089 > app.log
-
-sleep 3
+server-stop
+server-start
 
 rbg firefox localhost:8089/Index

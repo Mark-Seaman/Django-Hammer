@@ -99,7 +99,10 @@ def show_page_diffs(url):
     output,correct = page_names(url)
     diffs = diff(output, correct)
     if len(diffs)>1 and url!='': 
+        print 'FAIL'
         system('tdiff page-'+url)
+    else:
+        print 'PASS'
 
 
 def test_web_page(host,page):

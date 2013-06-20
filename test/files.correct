@@ -62,7 +62,10 @@ release
 rmas
 run
 search
+server-start
+server-stop
 show
+start-server
 t
 tdiff
 te
@@ -76,7 +79,6 @@ tresults
 trun
 tshow
 tst
-w
 web
 welcome
 words
@@ -131,6 +133,16 @@ hammer-write.correct
 hammer-write.diff
 hammer-write.out
 hammer-write.tst
+local_settings.py
+page-index.correct
+page-Index.correct
+page-index.diff
+page-Index.diff
+page-index.out
+page-Index.out
+page-login.correct
+page-login.diff
+page-login.out
 pages.correct
 pages.diff
 pages.out
