@@ -4,23 +4,14 @@
 x=~/Projects/jack-hammer
 
 
-cd $x/bin
+cd $x
 
-for f in `ls`
+# bin  test  app  app/views
+
+for f in `ls bin/* test/*.tst`
 do
     echo ____________________
     echo $f
-    diff $pb/$f $x/bin/$f
+    diff $p/$f $x/$f
 done
-
-
-cd $x/test
-
-for f in `ls *.tst`
-do
-    echo ____________________
-    echo $f
-    diff $pt/$f $x/test/$f
-done
-
 

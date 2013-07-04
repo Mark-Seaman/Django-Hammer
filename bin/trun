@@ -3,6 +3,6 @@
 
 cd $p/test              && 
 f=${1/\.tst/}           &&
-$f.tst > $f.out
+$f.tst &> $f.out
 
 tdiff $f

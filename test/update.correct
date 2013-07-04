@@ -1,9 +1,9 @@
 ____________________
-commit
+bin/commit
 ____________________
-create
+bin/create
 ____________________
-e
+bin/e
 4,6d3
 < # Run vi on remote server
 < [[ `hostname` == "web389.webfaction.com" ]] && vi $* && exit 0
@@ -13,25 +13,25 @@ e
 ---
 > #rbg gedit $* && exit 
 ____________________
-hammer-add
+bin/hammer-add
 ____________________
-hammer-edit
+bin/hammer-edit
 ____________________
-hammer-execute
+bin/hammer-execute
 ____________________
-hammer-list
+bin/hammer-list
 ____________________
-hammer-read
+bin/hammer-read
 ____________________
-hammer-show
+bin/hammer-show
 ____________________
-hammer-wiki
+bin/hammer-wiki
 ____________________
-hammer-write
+bin/hammer-write
 ____________________
-mkexe
+bin/mkexe
 ____________________
-project
+bin/project
 5c5
 < export p=~/Projects/django-hammer
 ---
@@ -41,17 +41,17 @@ project
 ---
 > figlet 'Jack Hammer'
 ____________________
-rbg
+bin/rbg
 ____________________
-run
+bin/run
 2c2,3
 < # Start the django server
 ---
 > # Show the pipe scan home page
 > echo 'Show the Jack Hammer app in a browser'
 4,5c5,15
-< server-stop
-< server-start
+< server-stop 
+< server-start 8089
 ---
 > cd $p/app
 > 
@@ -67,41 +67,45 @@ run
 7d16
 < rbg firefox localhost:8089/Index
 ____________________
-show
+bin/show
 ____________________
-tdiff
+bin/tdiff
 ____________________
-te
+bin/te
 ____________________
-tfail
+bin/tfail
 ____________________
-tlike
+bin/tlike
 ____________________
-tlist
+bin/tlist
 ____________________
-tnew
+bin/tnew
 ____________________
-todo
+bin/todo
 ____________________
-tout
+bin/tout
 ____________________
-tresults
+bin/tresults
 ____________________
-trun
+bin/trun
 ____________________
-tshow
+bin/tshow
 ____________________
-tst
+bin/tst
 ____________________
-docs.tst
+test/docs.tst
+5c5
+< find | sort | grep -v '\.out'
+---
+> find | sort 
 ____________________
-files.tst
+test/files.tst
 ____________________
-git.tst
+test/git.tst
 ____________________
-hammer-execute.tst
+test/hammer-execute.tst
 ____________________
-hammer-list.tst
+test/hammer-list.tst
 12,13c12,13
 < show  hammer-list  seaman
 < show  hammer-list  seaman/mybook/Automate
@@ -109,13 +113,13 @@ hammer-list.tst
 > show  hammer-list  test
 > show  hammer-list  seaman1
 ____________________
-hammer-read.tst
+test/hammer-read.tst
 3a4
 > hammer-read 'seaman1/Index'
 5d5
 < hammer-read 'seaman/Index'
 ____________________
-hammer-show.tst
+test/hammer-show.tst
 12a13
 > execute __App__/Index
 14,15c15,16
@@ -125,8 +129,12 @@ hammer-show.tst
 > execute seaman1
 > execute seaman1/Index
 ____________________
-hammer-wiki.tst
+test/hammer-wiki.tst
 ____________________
-hammer-write.tst
+test/hammer-write.tst
 ____________________
-update.tst
+test/update.tst
+11c11
+< for f in `ls bin/* test/*.tst`
+---
+> for f in `ls bin/* test/*.tst  app/*.js app/views/*.j*`
