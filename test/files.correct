@@ -118,8 +118,6 @@ files.correct
 files.tst
 git.correct
 git.tst
-hammer-execute.correct
-hammer-execute.tst
 hammer-show.correct
 hammer-show.tst
 hammer-wiki.correct

@@ -2,7 +2,6 @@ bin/commit
 bin/create
 bin/doc-pull
 bin/doc-push
-bin/e
 bin/elapsed
 bin/hammer-add
 bin/hammer-edit
@@ -10,6 +9,7 @@ bin/hammer-execute
 bin/hammer-list
 bin/hammer-read
 bin/hammer-show
+bin/hammer-tabs
 bin/hammer-wiki
 bin/hammer-write
 bin/lc
@@ -26,7 +26,6 @@ bin/tlike
 bin/tlist
 bin/tmklike
 bin/tnew
-bin/todo
 bin/tout
 bin/tresults
 bin/trun
@@ -37,7 +36,6 @@ bin/wiki.pyc
 test/docs.tst
 test/files.tst
 test/git.tst
-test/hammer-execute.tst
 test/hammer-show.tst
 test/hammer-wiki.tst
 test/hammer-write.tst
