@@ -1,9 +1,10 @@
 #!/bin/bash
 # Run all system tests
 
-
 # Go to test directory
-cd $p/test
+cd $1
+x=`ls *.tst` 2>/dev/null
+[ -z "$x" ] && cd $pt
 
 # Remove temp files
 find $p -name '*~' -exec rm '{}' \;
@@ -13,15 +14,16 @@ rbg Xvfb :99 -ac
 export DISPLAY=:99
 
 # Run every test
-echo "Run all tests"
-for f in *.tst 
-do
-    f=${f/.tst/}
-    trun $f
-done
+{
+    for f in *.tst 
+    do
+        f=${f/.tst/}
+        trun $f
+    done
+} | tee tst.out
 
 echo "Results:"
-tfail
+tfail $1
 
 # Stop the framebuffer server
 killall Xvfb

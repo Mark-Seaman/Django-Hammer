@@ -1,4 +1,5 @@
 #!/bin/bash
 # File list test
 
-ls $p $p/* | grep -v '.pyc\|.like'
+rmas $p # Remove autosave files
+ls $p $p/* | grep -v '\.pyc\|\.diff\|\.like\|\.out'
