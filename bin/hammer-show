@@ -1,35 +1,44 @@
 #!/bin/bash
 # Return the wiki text from the requested file
 
-
-cd $p/doc
+doc=$pd
+cd $doc
 d=$1
-[[ "$1" = "" ]]         && 
+
+# Handle no arg
+[ "$d" = "" ]                       && 
 d='Index'
 
-# Handle directories
-[[ -d "$pd/$d" ]]       && 
-if [[ -f "$pd/$d/Index" ]] 
-then
-    hammer-wiki < "$pd/$d/Index" && 
-    exit 0
-else
-    hammer-list "$1"    | 
-    hammer-wiki         && 
-    exit 0
-fi
+# Handle directories with Index
+[ -d "$doc/$d" ]                    && 
+[ -f "$doc/$d/Index" ]              &&
+d=`echo $d|sed 's/^.[^\/]*\///'`    &&
+echo "redirect:$d/Index"            && 
+exit 0
+
+# Handle directory without Index
+[ -d "$doc/$d" ]                    && 
+[ ! -f "$doc/$d/Index" ]            &&
+hammer-list "$1" | hammer-wiki      && 
+exit 0
 
 # Handle scripts
-[[ -x "$pd/$d" ]]       && 
-hammer-execute $d       &&
+[ -x "$doc/$d" ]                    && 
+hammer-execute $d                   &&
+exit 0
+
+# Handle random
+x=`basename $d`
+[ "$x" == "random" ]                &&
+doc-random `dirname $d`             &&
 exit 0
 
 # Handle missing page
-[[ ! -f "$pd/$d" ]]     && 
-echo "Missing page $d"  && 
+[ ! -f "$doc/$d" ]                  && 
+d=`echo $d|sed 's/^.[^\/]*\///'`    &&
+echo "redirect:$d/missing"          && 
 exit 0
 
 #Formatter is written in python
-hammer-wiki < "$pd/$d"
-
+hammer-tabs "$doc/$d" 
 

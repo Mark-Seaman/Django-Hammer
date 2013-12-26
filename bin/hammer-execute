@@ -2,19 +2,45 @@
 # Execute a command script
 
 # Remove the .tst
-f=${1/.tst/}
-doc=$1
-cmd=$p/doc/$doc
+doc=$pd/$1
+tst_doc=`echo $doc|grep .tst`
+ms_doc=`echo $tst_doc|grep 'unit\/'`
 
-# Select the command
-[[ ! -x "$cmd" ]]   && 
-echo "No command: $cmd" && 
+# Run a mill-script
+[ ! -z "$ms_doc" ]      && 
+[ -x "$doc" ]           && 
+echo "$1"|sed 's/unit\/\([0-9][0-9][0-9][0-9]\)\//mill-run \1 /'|bash   &&
+hammer-tabs $pd/$1.out  &&
+exit 0
+
+
+# Run a test
+[ ! -z "$tst_doc" ]     && 
+[ -x "$doc" ]           && 
+echo '<a href="Index">Index</a>'        &&
+echo "<h1>$d</h1>"      &&
+echo "<pre>Running $doc"&&
+echo '</pre>'           &&
+echo                    &&
+trun $doc > /dev/null   && 
+hammer-tabs ${doc/.tst/}.out    &&
+exit 0
+
+
+# Execute a non-test file
+[ -x "$doc" ]           && 
+{
+    #echo "Running $1 -- "
+    #date
+    #echo 
+    $doc 
+} > $doc.out            &&
+cat $doc.out            &&
+exit 0
+
+# No matching command
+echo "No command: $1"   && 
 exit 1
 
-# Select the command
-[[ -d "$cmd" ]]   && 
-echo "Directory cannot be executed: $cmd" && 
-exit 1
 
-# Execute the command
-$cmd 
+

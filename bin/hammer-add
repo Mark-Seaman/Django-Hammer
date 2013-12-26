@@ -1,17 +1,22 @@
 #!/bin/bash
 # Return the wiki text from the requested file
 
-
-cd $p/doc
+cd $pd
 d=$1
+f=`dirname $d`
+t='Note' 
 
-echo $1
-echo "$pd/$d"
-[[ ! -f "$pd/$d" ]]     && echo xxx
-# Add missing page
-[[ ! -f "$pd/$d" ]]     && 
-echo "* Missing page * 
-[[$d/edit][Create page $d]]
-" | hammer-wiki
+# Create a new page from template
+[ ! -f "$pd/$d" ]             && 
+[ -f "$pd/$f/.template" ]     && 
+t=`cat $pd/$f/.template`      
+hammer-clone $t $d   &&
+exit 0
 
+# Create a new page from scratch
+[ ! -f "$pd/$d" ]             && 
+echo "* $d * 
+[/$d/edit][Create page $d]
+" > $pd/$d
 
+cat $pd/$d
