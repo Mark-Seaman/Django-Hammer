@@ -10,7 +10,8 @@ function execute
 
 execute 
 execute Index
+execute __App__/Index
 execute __App__
-execute seaman
-execute seaman/Index
+execute seaman1
+execute seaman1/Index
 
