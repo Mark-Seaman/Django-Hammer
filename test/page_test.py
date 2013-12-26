@@ -121,7 +121,7 @@ def test_web_pages(host,pages):
     Get the home page, Login, Read all pages
     '''
     global browser
-    browser = webdriver.Firefox()
+    browser = webdriver.Chrome()
     browser.implicitly_wait(3)
     get_page_text(host,'')
     login(host,'xxx')

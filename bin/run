@@ -2,6 +2,6 @@
 # Start the django server
 
 server-stop 
-server-start 8089
+server-start
 
-rbg firefox localhost:8089/Index
+rbg firefox localhost:$port/Index
