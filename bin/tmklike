@@ -1,0 +1,13 @@
+#!/bin/bash
+# Create a like file for errors
+
+f=$1
+
+{
+echo "cd $pt &&"
+echo "tlike $f > /dev/null &&"
+echo "rm $f.like &&"
+echo "echo redirect:/test/Index" 
+} > $f.like && 
+
+chmod +x $f.like

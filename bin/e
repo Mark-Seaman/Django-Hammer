@@ -1,11 +1,8 @@
 #!/bin/bash
 # Edit a file
 
-# Run vi on remote server
-[[ `hostname` == "web389.webfaction.com" ]] && vi $* && exit 0
-
 # Use gedit by default  (comment these two lines to use emacs instead)
-#rbg emacs $* && exit 
+#rbg gedit $* && exit 
 
 # Check to see if emacs is already running
 process=`ps -ef|grep -v grep|grep emacs`

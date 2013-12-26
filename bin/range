@@ -1,0 +1,10 @@
+#!/bin/bash
+# Check the range for a count
+
+x=`lc`
+min=$1
+max=$2
+[ "$min" == "" ] && min=1
+[ "$max" == "" ] && max=10
+[ $x -lt $min ] && echo "actual: $x expected: $min"
+[ $x -gt $max ] && echo "actual: $x expected: $max"
