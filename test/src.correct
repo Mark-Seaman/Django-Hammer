@@ -14,11 +14,9 @@ bin/hammer-wiki
 bin/hammer-write
 bin/lc
 bin/mkexe
-bin/project
 bin/range
 bin/rbg
 bin/rmas
-bin/run
 bin/show
 bin/src-jack
 bin/tdiff
