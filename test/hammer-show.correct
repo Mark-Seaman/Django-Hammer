@@ -11,11 +11,25 @@ This is some more text
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
 <br/> 
-<br/> <b>Tab 1</b>
+<br/> 
+<div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Tab 1">
+        <div class="page">
+        <b>Tab 1</b>
 <br/>  This is some text
 <br/> 
-<br/> <b>Tab 2</b>
+<br/> 
+        </div>
+     </tab>
+     <tab heading="Tab 2">
+        <div class="page">
+        <b>Tab 2</b>
 <br/> 
 <br/> This is some more text
 <br/> 
 <br/> 
+        </div>
+     </tab>
+  </tabset>
+</div>

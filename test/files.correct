@@ -57,6 +57,7 @@ hammer-execute
 hammer-list
 hammer-read
 hammer-show
+hammer-tabs
 hammer-wiki
 hammer-write
 hourly
