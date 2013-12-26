@@ -17,7 +17,6 @@ echo "Run all tests"
 for f in *.tst 
 do
     f=${f/.tst/}
-    echo "Running... $f"
     trun $f
 done
 

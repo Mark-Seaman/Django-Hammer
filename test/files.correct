@@ -114,12 +114,10 @@ docs.out
 docs.tst
 files.correct
 files.diff
-files.like
 files.out
 files.tst
 git.correct
 git.diff
-git.like
 git.out
 git.tst
 hammer-execute.correct
