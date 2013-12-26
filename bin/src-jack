@@ -2,5 +2,5 @@
 # List the bin files
 
 cd $jack
-ls bin/*
+ls bin/* | grep -v 'bin/project\|bin/run'
 ls test/*.tst
