@@ -78,9 +78,7 @@ t
 tdiff
 te
 tfail
-tlike
 tlist
-tmklike
 tnew
 todo
 tout
@@ -139,13 +137,11 @@ hammer-write.tst
 local_settings.py
 page-50-Tricks-Index.correct
 page-50-Tricks-Index.diff
-page-50-Tricks-Index.like
 page-50-Tricks-Index.out
 page-index.correct
 page-Index.correct
 page-index.diff
 page-Index.diff
-page-Index.like
 page-index.out
 page-Index.out
 page-login.correct

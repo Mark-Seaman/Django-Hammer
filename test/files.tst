@@ -1,4 +1,4 @@
 #!/bin/bash
 # File list test
 
-ls $p $p/* | grep -v .pyc
+ls $p $p/* | grep -v '.pyc\|.like'
