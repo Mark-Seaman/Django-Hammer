@@ -110,7 +110,6 @@ app.log
 data
 docs.correct
 docs.diff
-docs.like
 docs.out
 docs.tst
 files.correct
@@ -129,7 +128,6 @@ hammer-execute.out
 hammer-execute.tst
 hammer-show.correct
 hammer-show.diff
-hammer-show.like
 hammer-show.out
 hammer-show.tst
 hammer-wiki.correct
@@ -164,8 +162,3 @@ src.correct
 src.diff
 src.out
 src.tst
-update.correct
-update.diff
-update.like
-update.out
-update.tst
