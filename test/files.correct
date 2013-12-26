@@ -116,10 +116,6 @@ hammer-execute.correct
 hammer-execute.diff
 hammer-execute.out
 hammer-execute.tst
-hammer-list.correct
-hammer-list.diff
-hammer-list.out
-hammer-list.tst
 hammer-read.correct
 hammer-read.diff
 hammer-read.out
@@ -154,6 +150,9 @@ pages.diff
 pages.out
 pages.tst
 page_test.py
+src.correct
+src.diff
+src.out
 src.tst
 update.correct
 update.diff
