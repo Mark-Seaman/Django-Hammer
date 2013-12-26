@@ -1,3 +1,4 @@
+/home/seaman/Projects/django-hammer/page_test.py
 /home/seaman/Projects/django-hammer/present
 /home/seaman/Projects/django-hammer/README.md
 /home/seaman/Projects/django-hammer/slide-text
@@ -7,6 +8,7 @@
 app
 bin
 doc
+page_test.py
 present
 README.md
 slides
@@ -134,6 +136,9 @@ hammer-write.diff
 hammer-write.out
 hammer-write.tst
 local_settings.py
+page-50-Tricks-Index.correct
+page-50-Tricks-Index.diff
+page-50-Tricks-Index.out
 page-index.correct
 page-Index.correct
 page-index.diff

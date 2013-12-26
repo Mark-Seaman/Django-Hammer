@@ -8,12 +8,11 @@ from platform import node
 port = environ['port']
 host = 'localhost:'+port
 
-pages = '''
-login
-Index'''
+pages = '''Index
+50-Tricks/Index
+'''
 
-#pages = ''
-
+system('server-start')
 chdir (join(environ['p'],'test'))
 
 if 'seaman-' not in node():
@@ -23,7 +22,4 @@ if 'seaman-' not in node():
 else:
     from page_test import test_web_pages
     print 'Testing Host:',host
-    print 'Starting the server'
-    system ('server-stop && server-start')
     test_web_pages(host,pages)
-    system ('server-stop>/dev/null')
