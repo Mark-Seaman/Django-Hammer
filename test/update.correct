@@ -1,7 +1,15 @@
+ls: cannot access app/doc/*.py: No such file or directory
+ls: cannot access app/Hammer/*.py: No such file or directory
 ____________________
 bin/commit
 ____________________
 bin/create
+____________________
+bin/doc-pull
+diff: /home/seaman/Projects/django-hammer/bin/doc-pull: No such file or directory
+____________________
+bin/doc-push
+diff: /home/seaman/Projects/django-hammer/bin/doc-push: No such file or directory
 ____________________
 bin/e
 4,6d3
@@ -13,9 +21,16 @@ bin/e
 ---
 > #rbg gedit $* && exit 
 ____________________
+bin/elapsed
+diff: /home/seaman/Projects/django-hammer/bin/elapsed: No such file or directory
+____________________
 bin/hammer-add
 ____________________
 bin/hammer-edit
+4c4
+< cat - > $p/doc/$1
+---
+> cat > $p/doc/$1
 ____________________
 bin/hammer-execute
 ____________________
@@ -26,8 +41,135 @@ ____________________
 bin/hammer-show
 ____________________
 bin/hammer-wiki
+4,123c4,5
+< from os.path    import isfile, exists
+< from sys        import argv, stdin
+< from re         import compile, IGNORECASE, DOTALL
+< 
+< # Create bold text if needed
+< def make_heading(line):
+<     pat = compile(r"\* (.*) \*", IGNORECASE | DOTALL)
+<     return pat.sub(r'<h1>\1</h1>', line)
+< 
+< # Create bold text if needed
+< def make_bold(line):
+<     pat = compile(r"\*\*(.*)\*\*", IGNORECASE | DOTALL)
+<     return pat.sub(r'<b>\1</b>', line)
+< 
+< # Create bold text if needed
+< def make_italic(line):
+<     pat = compile(r"\*([a-zA-Z0-9].*[a-zA-Z0-9])\*", IGNORECASE | DOTALL)
+<     return pat.sub(r'<i>\1</i>', line)
+< 
+< # Add paragraph breaks if needed
+< def break_paragraphs(line):
+<     if line=='': return '</p><p>'
+<     else: return line
+< 
+< # Remove the muse tag from the first line
+< def remove_muse(line):
+<     return line.replace ('-*-muse-*-', '').replace ('-*- muse -*-', '').rstrip()
+< 
+< # Preserve any four spaces together
+< def preserve_spaces(line):
+<     return line.replace('    ', '&nbsp;&nbsp;&nbsp;&nbsp;')
+< 
+< # Break lines for <space> at beginning
+< def space_breaks(line):
+<     always_break = True
+<     if always_break or (len(line)>0 and line[0]==' '):
+<         return  '<br/> '+line
+<     return line
+< 
+< # Add horizontal rules
+< def format_rules(line):
+<     i=line.find('---')
+<     if i!=-1:
+<        return line.replace('---', '<hr>')
+<     return line
+< 
+< # Add bullets
+< def format_bullets(line):
+<     i=line.find('  * ')
+<     if i!=-1:
+<         return "<ul><li>"+line[i+4:]+"</li></ul>"
+<     return line
+< 
+< # Convert the url in a string to an HTML anchor
+< def muse_double_anchor(url):
+<     s = r"\[\[([\/\w\.\:\-\_]*)\]\[([ \w\.\-\_\,\?\%]*)\]\]"
+<     pat = compile(s, IGNORECASE | DOTALL)
+<     return pat.sub(r' <a href="\1">\2</a> ', url)
+< 
+< # Convert the url in a string to an HTML anchor
+< def muse_single_anchor(url):
+<     s = r"\[\[([\/\w\.\-\_]*)\]\]"
+<     pat = compile(s, IGNORECASE | DOTALL)
+<     return  pat.sub(r' <a href="\1">\1</a> ', url)
+< 
+< # Convert the url in a string to an HTML anchor
+< def muse_anchor(url):
+<     url = muse_double_anchor(url)
+<     return muse_single_anchor(url)
+< 
+< # Convert the url in a string to an HTML anchor
+< def url_to_anchor(url):
+<     s = r"(^|[\n ])(([\w]+?://[\w\#$%&~.\-;:=,?@\[\]+]*)(/[\w\#$%&~/.\-;:=,?@\[\]+]*)?)"
+<     pat = compile(s, IGNORECASE | DOTALL)
+<     return pat.sub(r'\1<a href="\2" target="_blank">\2</a>', url)
+< 
+< # Convert the url in a string to an HTML image tag
+< def url_to_image(url):
+<     s = r"\[\[images/(([\w\#$%&~.\-;:=,?@\[\]+]*)(/[\w\#$%&~/.\-;:=,?@\[\]+]*)?)\]\]"
+<     pat = compile(s, IGNORECASE | DOTALL)
+<     return pat.sub(r'<img src="/media/mybook/images/\1" alt="\1">', url)
+< 
+< # Convert the Wiki Words to hyperlinks
+< def wiki_words(text):
+<     s = r"([^A-Za-z\"\']*)([A-Z][a-z]+[A-Z][a-z]+([A-Z][a-z]+)*)([^A-Za-z\'\"]*)"
+<     pat = compile(s, DOTALL)
+<     return muse_anchor(pat.sub(r'\1[[\2]]\4', text))
+< 
+< # Convert a single line of muse to html
+< def convert_links(text1):
+<     text = text1
+<     text = url_to_image(text)
+<     text = url_to_anchor(text)
+<     text = muse_anchor(text)
+<     if text==text1: text = wiki_words(text)
+<     return text
+< 
+< # Convert a single text line to html
+< def convert_line(line):
+<     line = remove_muse(line).rstrip()
+<     line = space_breaks(line)
+<     line = format_rules(line)
+<     line = format_bullets(line)
+<     line = break_paragraphs(line)
+<     line = convert_links(line)
+<     line = preserve_spaces(line)
+<     line = make_heading(line)
+<     line = make_bold(line)
+<     return make_italic(line)
+< 
+< # Convert array of strings to html body text
+< def convert_html(text):
+<     text = map(convert_line, text)
+<     return '\n'.join(text)
+< 
+< # The first line holds the page title
+< def get_title(text):
+<     if len(text)>0: 
+<         return remove_muse(text[0]).rstrip()[2:][:-2]
+<     return 'No title'
+---
+> from sys        import stdin
+> from wiki       import convert_html
 ____________________
 bin/hammer-write
+____________________
+bin/lc
+diff: /home/seaman/Projects/django-hammer/bin/lc: No such file or directory
 ____________________
 bin/mkexe
 ____________________
@@ -36,12 +178,33 @@ bin/project
 < export p=~/Projects/django-hammer
 ---
 > export p=~/Projects/jack-hammer
-31c31
+11d10
+< export port=8042
+18a18
+> alias tres='tresults'
+32c32
 < figlet 'Django Hammer'
 ---
 > figlet 'Jack Hammer'
 ____________________
+bin/range
+diff: /home/seaman/Projects/django-hammer/bin/range: No such file or directory
+____________________
 bin/rbg
+____________________
+bin/rmas
+6c6
+< [[ ! -z "$x" ]] && echo $x && rm $x
+---
+> [ ! -z "$x" ] && echo $x && rm $x
+10c10,14
+< [[ ! -z "$x" ]] && echo $x && rm $x
+---
+> [ ! -z "$x" ] && echo $x && rm $x
+> 
+> echo 'Git libpeerconnection files'
+> x=`find $1 -name libpeerconnection.log`
+> [ ! -z "$x" ] && echo $x && rm $x
 ____________________
 bin/run
 2c2,3
@@ -51,7 +214,7 @@ bin/run
 > echo 'Show the Jack Hammer app in a browser'
 4,5c5,15
 < server-stop 
-< server-start 8089
+< server-start
 ---
 > cd $p/app
 > 
@@ -65,33 +228,181 @@ bin/run
 > # Show the web page
 > rbg firefox localhost:8081
 7d16
-< rbg firefox localhost:8089/Index
+< rbg firefox localhost:$port/Index
 ____________________
 bin/show
 ____________________
+bin/src-jack
+____________________
 bin/tdiff
+5,6d4
+< cd $p/test
+< 
+8c6
+< t=$f.tmp
+---
+> [ ! -x $f.tst ]  && cd $p/test 
+11c9,13
+< [[ ! -f $f.correct ]] && cp $f.out $f.correct
+---
+> [ ! -f $f.correct ] && cp $f.out $f.correct
+> 
+> # Filter the output
+> [ -x $f.filter   ] && mv $f.out $f.tmp && $f.filter < $f.tmp > $f.out
+> rm -f $f.tmp
+15a18,20
+> # Create the like file if error
+> [[   -s $f.diff ]] && tmklike $f
+> [[ ! -s $f.diff ]] && rm -f $f.like
 ____________________
 bin/te
 ____________________
 bin/tfail
+3a4,5
+> d="$1"
+> [ "$1" == "" ] && d=$pt
+5c7
+< cd $p/test
+---
+> cd $d
+7c9,14
+<     for f in *.tst
+---
+>     
+>     files=`ls $d/*.tst`
+>     #echo "Tests: $files"
+>     [ -z "$files" ] && echo "ERROR: no tests found $d" && exit 1
+> 
+>     for f in $files
+8a16
+>         #echo "tdiff $f"
 ____________________
 bin/tlike
 ____________________
 bin/tlist
+4,5c4,12
+< cd $p/test
+< ls *.tst | while read t; do echo ${t/\.tst/}; done
+---
+> d=$1
+> [ -z "$d" ] && d="$pt"
+> cd $d
+> 
+> ls *.tst | 
+> while read t
+> do 
+>     echo ${t/\.tst/}
+> done
+____________________
+bin/tmklike
+diff: /home/seaman/Projects/django-hammer/bin/tmklike: No such file or directory
 ____________________
 bin/tnew
 ____________________
 bin/todo
 ____________________
 bin/tout
+5c5,7
+< cat $p/test/$f.out
+---
+> [ -f $f.out     ] && cat $f.out && exit 0
+> [ -f $pt/$f.out ] && cat $pt/$f.out && exit 0
+> echo "No file found: $f.out"
 ____________________
 bin/tresults
+7a8
+> {
+16a18
+> } | less
 ____________________
 bin/trun
+4c4
+< cd $p/test              && 
+---
+> # Execute in this directory or the project test directory
+6c6
+< $f.tst &> $f.out
+---
+> [ ! -x $f.tst ]  && cd $p/test 
+7a8,22
+> # Check for the test file
+> [ ! -x $f.tst ]         && 
+> echo "No test found, $f.tst" && 
+> exit 0
+> 
+> t=/tmp/trun$$
+> echo -n "Running test ... $f ... "
+> $p/bin/elapsed "$f.tst > $t"
+> 
+> # Display the output
+> [ -x $f.display   ] && $f.display < $t > $f.out
+> [ ! -x $f.display ] && mv $t $f.out
+> rm -f $t
+> 
+> # Compare the results to expected
 ____________________
 bin/tshow
+4,5c4,7
+< echo 'Contents for ' $p/test/$1.tst
+< cat  $p/test/$1.tst
+---
+> t=${1/.tst/}
+> [ ! -x $t.tst ]  && t=$p/test/$t 
+> echo 'Contents for ' $t.tst
+> cat  $t.tst
 ____________________
 bin/tst
+4d3
+< 
+6c5,7
+< cd $p/test
+---
+> cd $1
+> x=`ls *.tst` 2>/dev/null
+> [ -z "$x" ] && cd $pt
+8,9c9
+< # Remove temp files
+< find $p -name '*~' -exec rm '{}' \;
+---
+> {
+11,13c11,12
+< # Run the frame buffer server
+< rbg Xvfb :99 -ac
+< export DISPLAY=:99
+---
+>     # Run every test
+>     echo "Run all tests"
+15,22c14,17
+< # Run every test
+< echo "Run all tests"
+< for f in *.tst 
+< do
+<     f=${f/.tst/}
+<     echo "Running... $f"
+<     trun $f
+< done
+---
+>     for f in *.tst 
+>     do
+>         trun $f
+>     done
+24,25c19,20
+< echo "Results:"
+< tfail
+---
+>     echo "Results:"
+>     tfail $1
+27,28c22
+< # Stop the framebuffer server
+< killall Xvfb
+---
+> } | tee tst.out
+____________________
+bin/wiki.py
+diff: /home/seaman/Projects/django-hammer/bin/wiki.py: No such file or directory
+____________________
+bin/wiki.pyc
+diff: /home/seaman/Projects/django-hammer/bin/wiki.pyc: No such file or directory
 ____________________
 test/docs.tst
 5c5
@@ -100,18 +411,18 @@ test/docs.tst
 > find | sort 
 ____________________
 test/files.tst
+4c4,5
+< ls $p $p/* | grep -v .pyc
+---
+> rmas $p # Remove autosave files
+> ls $p $p/* | grep -v '\.pyc\|\.diff\|\.like\|\.out'
 ____________________
 test/git.tst
 ____________________
 test/hammer-execute.tst
 ____________________
 test/hammer-list.tst
-12,13c12,13
-< show  hammer-list  seaman
-< show  hammer-list  seaman/mybook/Automate
----
-> show  hammer-list  test
-> show  hammer-list  seaman1
+diff: /home/seaman/Projects/django-hammer/test/hammer-list.tst: No such file or directory
 ____________________
 test/hammer-read.tst
 3a4
@@ -133,8 +444,426 @@ test/hammer-wiki.tst
 ____________________
 test/hammer-write.tst
 ____________________
-test/update.tst
-11c11
-< for f in `ls bin/* test/*.tst`
+test/src.tst
+____________________
+doc/__init__.py
+____________________
+doc/models.py
+4c4
+< from os.path            import exists,join,dirname
 ---
-> for f in `ls bin/* test/*.tst  app/*.js app/views/*.j*`
+> from os.path            import exists,join,dirname,basename
+22a23,30
+> def title_text(title):
+>     '''
+>     Format the title with spaces to break each word.
+>     '''
+>     title = title[0] + ''.join([ " "+c if c.isupper() else c  for c in title[1:] ])
+>     return title 
+> 
+>     
+29a38,44
+> def is_doc(title):
+>     '''
+>     Look for the document
+>     '''
+>     return exists(doc_file(title))     
+> 
+> 
+37c52,53
+<         return open(template).read()[:-1]
+---
+>         text = open(template).read()[:-1]
+>         return text
+42c58
+< def clone_template(title):
+---
+> def template_text(title):
+46c62
+<     t = doc_file(join('template',doc_template(title)))
+---
+>     t = doc_file(join('template', doc_template(title)))
+48,51c64,66
+<         text = open(t).read()%title
+<         f = open(doc_file(title),'wt')
+<         f.write(text)
+<         f.close()    
+---
+>         text = open(t).read() % title_text(basename(title))
+>         return text
+>     return 'None'
+66,72d80
+<     
+< def is_doc(title):
+<     '''
+<     Look for the document
+<     '''
+<     return exists(doc_file(title))     
+< 
+85c93,102
+<     return do_command('hammer-read %s'%title)
+---
+>     #return do_command('hammer-read %s'%title)
+>     return do_command('doc-get %s'%title)
+> 
+> 
+> def add_doc(title):
+>     '''
+>     Create the document using a template
+>     '''
+>     #return do_command('hammer-add %s'%title)
+>     return do_command('hammer-add %s'%title)
+93c110,111
+<     do_command('hammer-write %s'%title, body)
+---
+>     #do_command('hammer-write %s'%title, body)
+>     do_command('doc-put %s'%title, body)
+98c116,145
+<         remove(doc_file(title)) 
+---
+>         remove(doc_file(title))
+> 
+> 
+> def list_tests(title):
+>     '''
+>     Generate a list of test files in CSV format
+>     '''
+>     return do_command('hammer-tests '+title)
+> 
+> 
+> def generate(title):
+>     '''
+>     Generate a list of test files in CSV format
+>     '''
+>     return do_command('hammer-wmd '+title)
+> 
+> 
+> def enable_app(user, title):
+>     '''
+>     Enable an app for a user
+>     '''
+>     do_command('app-enable %s %s'%(user,title))
+> 
+> 
+> def disable_app(user, title):
+>     '''
+>     Disable an app for a user
+>     '''
+>     do_command('app-disable %s %s'%(user,title))
+> 
+____________________
+doc/story.py
+diff: /home/seaman/Projects/django-hammer/app/doc/story.py: No such file or directory
+____________________
+doc/tests.py
+____________________
+doc/thumper.py
+diff: /home/seaman/Projects/django-hammer/app/doc/thumper.py: No such file or directory
+____________________
+doc/urls.py
+diff: /home/seaman/Projects/django-hammer/app/doc/urls.py: No such file or directory
+____________________
+doc/views.py
+4a5
+> from django.utils.html  import escape
+9a11,21
+> logFile=environ['p']+'/logs/user/page.log'
+> 
+> def ip(request):
+>     '''
+>     Get the IP address for the request
+>     '''
+>     if request.META['REMOTE_ADDR']=='127.0.0.1':
+>         return request.META['REMOTE_ADDR']
+>     return request.META['HTTP_X_FORWARDED_FOR']
+> 
+> 
+14c26,37
+<     return request.user.username
+---
+>     if not request.user.is_anonymous():
+>         return request.user.username
+>     else:
+>         return 'Anonymous'
+> 
+> 
+> def user_doc(request,title):
+>     '''
+>     Return the document for this user.
+>     '''
+>     return join(user(request),title)
+>     #return  title
+17c40
+< def log_page(user,title):
+---
+> def log_page(request,title):
+19c42
+<     Log the page hit in page.log
+---
+>     Log the page hit in page.log  (time, ip, user, page, doc) 
+21,22c44,51
+<     f=open('page.log','a')
+<     f.write(str(datetime.now())+', '+user+', '+title+'\n')
+---
+>     u   = user(request)
+>     if ':' in title:
+>         doc = title
+>     else:
+>         doc = join(u, title)
+>     f=open(logFile,'a')
+>     options = (str(datetime.now()), ip(request), u, request.path, doc)
+>     f.write('%s, %s, %s, %s, %s\n'%options)
+25a55,64
+> def new(request,title):
+>     '''
+>     Render the view for a missing document
+>     '''
+>     text = format_doc('Anonymous/NewPage') # % title
+>     data = {'title':title, 'dir':dirname(title), 'text':text, 
+>             'default':basename(title), 'newpage':'{{newpage}}'}
+>     return render(request, 'new.html', data)
+> 
+> 
+30,35c69,74
+<     text = format_doc('MissingFile')
+<     template = doc_template(join(user(request),title))
+<     href = "%s/%s/add" % (title,template)
+<     return redirect(href)
+<     #link = '<a href="/%s">%s</a>' % (href,title)
+<     #return render(request, 'doc.html', {'title': title, 'text': text%link })
+---
+>     if not permitted(request):
+>         return redirect(request,'login')
+>     text = format_doc('Anonymous/MissingFile') % title
+>     data = {'title':title, 'dir':dirname(title), 'text':text, 
+>             'default':basename(title), 'newpage':'{{newpage}}'}
+>     return render(request, 'missing.html', data)
+38c77
+< def redirect(title):
+---
+> def redirect(request,title):
+42c81
+<     print 'redirect: %s'%(title)
+---
+>     log_page (request,'redirect:%s'%title)
+46,47d84
+< 
+< @login_required(login_url='/login')
+52,61c89,97
+<     doc = join(user(request),title)
+<     log_page (user(request), title)
+<     print 'doc: %s'%(title)
+<     if title.endswith('/'):
+<         return redirect(title+'Index')
+<     if is_doc(doc):
+<         text = format_doc(doc)
+<         return render(request, 'doc.html', {'title': title, 'text': text})
+<     else:
+<         return missing(request,title)
+---
+>     doc = user_doc(request,title)
+>     log_page (request, title)
+>     text = format_doc(doc)
+>     if text.startswith('redirect:'):
+>         return redirect(request,text[len('redirect:'):-1])
+>     if not permitted(request, doc):
+>         return redirect(request,'login')
+>     content =  {'title': title, 'text': text}
+>     return render(request, 'doc.html', content)
+68,71c104,120
+<     if not request.user.is_anonymous():
+<         return doc(request,'Index')
+<     log_page ('Annonymous', 'Index')
+<     return render(request, 'doc.html', {'title': 'Index', 'text': format_doc('__App__/Index')})
+---
+>     if request.user.is_anonymous():
+>         doc = 'Anonymous/Index'
+>         log_page (request, 'Index')
+>         data = {'title': 'Index', 'text': format_doc(doc)}
+>         return render(request, 'doc.html', data)
+>     return redirect (request,'Index')
+> 
+> 
+> @login_required(login_url='/login')
+> def store(request,title):
+>     '''
+>     Get and put doc directly
+>     '''
+>     log_page (request, title)
+>     doc  = user_doc(request,title)
+>     text = read_doc(doc)
+>     return HttpResponse(text)
+75c124
+< def edit_form (request, title=None):
+---
+> def edit_form (request, doc, title=None, text=None):
+79,81c128
+<     print 'form: %s'%(title)
+<     name = user(request)
+<     doc = join(name,title)
+---
+>     log_page (request, 'form:%s'%title)
+85,89c132
+<             # TODO: set real cancel redirect
+<             #title = form.data['path']
+<             if not title:
+<                 title = 'Home'
+<             return redirect('Index')
+---
+>             return redirect(request,title)
+92,94c135,140
+<                 print 'save: %s'%(title)
+<                 write_doc(doc, form.cleaned_data['body'])
+<                 return redirect(title)
+---
+>                 log_page (request, 'save:%s'%title)
+>                 text =  form.cleaned_data['body']
+>                 text = text.encode('ascii', 'ignore')
+>                 text = text.replace('\r','')
+>                 write_doc(doc,text)
+>                 return redirect(request,title)
+97,98c143,145
+<         if  title:
+<             note.path = title
+---
+>         note.path = title
+>         log_page (request,'read:%s'%title)
+>         if not text:
+100,101c147,148
+<                 print 'read: %s'%(title)
+<                 note.body = read_doc(doc)
+---
+>                 text = read_doc(doc)
+>         note.body = text
+103,104c150,151
+<     data =  { 'form': form, 'title': title  }
+<     return render(request, 'edit.html', data)
+---
+>     data =  { 'form': form, 'title': title, 'banner': True  }
+>     return render(request, 'docedit.html', data)
+107c154
+< def add(request,title,template):
+---
+> def edit(request,title):
+111,113c158,160
+<     print 'add: %s, %s'%(title,template)
+<     clone_template(join(user(request),title))
+<     return edit_form (request,title)
+---
+>     doc = user_doc(request,title)
+>     log_page (request, 'edit:%s'%title)
+>     return edit_form (request, doc, title)
+116c163
+< def edit(request,title):
+---
+> def add(request,title):
+120,122c167,171
+<     print 'edit: %s'%(title)
+<     return edit_form (request,title)
+< 
+---
+>     log_page (request,'add:%s'%title)
+>     text = add_doc(user_doc(request,title))
+>     if text.startswith('redirect:'):
+>         return redirect(request,text[len('redirect:'):-1])
+>     return missing(request,title)
+128,142c177,180
+<     print 'delete: %s'%(title)
+<     delete_doc (join(user(request),title))
+<     return redirect(dirname(title))
+< 
+<   
+< # Sample code:
+< #    if request.user.is_anonymous(): return 0
+< #    if not request.user.is_superuser:  return redirect('/NoAccess') 
+< #    u = UserAccount.objects.get(pk=request.user.pk).pk
+< #    if not u==user_id:    return redirect('/NoAccess')
+< 
+< from django import forms
+< from django.contrib.auth.forms import UserCreationForm
+< from django.http import HttpResponseRedirect
+< from django.shortcuts import render
+---
+>     doc = user_doc(request,title)
+>     log_page (request, 'delete: %s'%title)
+>     delete_doc (doc)
+>     return redirect(request,dirname(title))
+144,154c182,203
+< def register(request):
+<     if request.method == 'POST':
+<         form = UserCreationForm(request.POST)
+<         if form.is_valid():
+<             new_user = form.save()
+<             return HttpResponseRedirect("/ThankYou")
+<     else:
+<         form = UserCreationForm()
+<     return render(request, "registration/register.html", {
+<         'form': form,
+<     })
+---
+> 
+> def permitted(request,title=''):
+>     '''
+>     Check for all security violations
+>     '''
+>     return title.startswith('Anonymous') or user(request)!='Anonymous'
+> 
+> 
+> def illegal(request):
+>     title = 'IllegalMachine'
+>     log_page (request, 'illegal: %s'%title)
+>     user = str(request.user)
+>     text = user+format_doc(title)%ip(request)
+>     return render(request, 'doc.html', {'title': title, 'text': text})
+> 
+> 
+> def ip_ok(request):
+>     '''
+>     Check the IP address for the request
+>     '''
+>     valid = [ '108.59.4.75', '50.134.243.56', '127.0.0.1' ]
+>     return ip(request) in valid
+____________________
+Hammer/__init__.py
+____________________
+Hammer/local_settings.py
+____________________
+Hammer/settings.py
+2a3
+> from socket import gethostname
+3a5
+> from os import environ
+4a7
+> 
+7a11,12
+> if not environ.has_key('p'): environ['p'] = environ['HOME']
+> 
+60a66
+> 
+63d68
+<    join(APP_ROOT, 'static/'),
+74c79,82
+< 
+---
+> if  gethostname().startswith('seaman-'):
+>     MEDIA_ROOT = join(APP_ROOT, 'media/')
+> else:
+>     MEDIA_ROOT = ''
+83,88c91,94
+< TEMPLATE_LOADERS = ( 
+<     ('pyjade.ext.django.Loader',(
+<             'django.template.loaders.filesystem.Loader',
+<             'django.template.loaders.app_directories.Loader',
+<             'django.template.loaders.eggs.Loader',
+<             )),
+---
+> TEMPLATE_LOADERS = (
+>     'django.template.loaders.filesystem.Loader',
+>     'django.template.loaders.app_directories.Loader',
+>     'django.template.loaders.eggs.Loader',
+101c107
+< ROOT_URLCONF = 'Hammer.urls'
+---
+> ROOT_URLCONF = 'doc.urls'
+____________________
+Hammer/wsgi.py

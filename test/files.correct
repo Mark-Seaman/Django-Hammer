@@ -67,6 +67,7 @@ search
 server-start
 server-stop
 show
+src-jack
 start-server
 t
 tdiff
@@ -153,6 +154,7 @@ pages.diff
 pages.out
 pages.tst
 page_test.py
+src.tst
 update.correct
 update.diff
 update.out
