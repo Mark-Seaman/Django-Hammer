@@ -3,8 +3,12 @@
 
 echo Remove automatically saved files from this directory tree
 x=`find $1 -name "*~"`
-[[ ! -z "$x" ]] && echo $x && rm $x
+[ ! -z "$x" ] && echo $x && rm $x
 
 echo 'Git orig files'
 x=`find $1 -name "*.orig"`
-[[ ! -z "$x" ]] && echo $x && rm $x
+[ ! -z "$x" ] && echo $x && rm $x
+
+echo 'Git libpeerconnection files'
+x=`find $1 -name libpeerconnection.log`
+[ ! -z "$x" ] && echo $x && rm $x

@@ -1,6 +1,8 @@
 #!/bin/bash
 # Show the test code
 
-echo 'Contents for ' $p/test/$1.tst
-cat  $p/test/$1.tst
+t=${1/.tst/}
+[ ! -x $t.tst ]  && t=$p/test/$t 
+echo 'Contents for ' $t.tst
+cat  $t.tst
 

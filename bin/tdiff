@@ -2,14 +2,19 @@
 # Compare the last output with the correct output
 
 # Go to directory
-cd $p/test
-
 f=${1/.tst/}
-t=$f.tmp
+[ ! -x $f.tst ]  && cd $p/test 
 
 # Accept any result the first time
-[[ ! -f $f.correct ]] && cp $f.out $f.correct
+[ ! -f $f.correct ] && cp $f.out $f.correct
+
+# Filter the output
+[ -x $f.filter   ] && mv $f.out $f.tmp && $f.filter < $f.tmp > $f.out
+rm -f $f.tmp
 
 # Show differences from actual to expected results
 diff $f.out $f.correct | tee $f.diff 
 
+# Create the like file if error
+[[   -s $f.diff ]] && tmklike $f
+[[ ! -s $f.diff ]] && rm -f $f.like
