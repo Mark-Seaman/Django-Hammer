@@ -2,6 +2,7 @@
 *.dat
 *.diff
 *.gz
+*.like
 *.log
 *.out
 *.pyc
