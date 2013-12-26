@@ -89,4 +89,6 @@
 ./seaman/template/UserStory
 ./seaman/template/Weekly
 ./seaman/ToDo
+./test
+./test/Index
 ./ToDo
