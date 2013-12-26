@@ -1,0 +1,5 @@
+#!/bin/bash
+# Django Hammer source code
+
+cd $p
+ls bin/* app/*.py  app/*/*.py test/*.tst 

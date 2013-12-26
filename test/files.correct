@@ -76,6 +76,7 @@ search
 server-start
 server-stop
 show
+src-django
 src-jack
 start-server
 t
