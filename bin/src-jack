@@ -1,0 +1,6 @@
+#!/bin/bash
+# List the bin files
+
+cd $jack
+ls bin/*
+ls test/*.tst
