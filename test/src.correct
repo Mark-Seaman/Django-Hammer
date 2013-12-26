@@ -40,8 +40,6 @@ test/docs.tst
 test/files.tst
 test/git.tst
 test/hammer-execute.tst
-test/hammer-list.tst
-test/hammer-read.tst
 test/hammer-show.tst
 test/hammer-wiki.tst
 test/hammer-write.tst
