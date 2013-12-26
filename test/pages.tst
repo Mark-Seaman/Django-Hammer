@@ -9,7 +9,6 @@ port = environ['port']
 host = 'localhost:'+port
 
 pages = '''Index
-50-Tricks/Index
 '''
 
 system('server-start')

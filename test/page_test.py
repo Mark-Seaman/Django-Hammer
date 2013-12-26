@@ -117,7 +117,7 @@ def test_web_page(host,page):
     show_page_diffs(page)
 
 
-def test_web_pages(host,pages,login_page=False):
+def test_web_pages(host,pages,login_page=True):
     '''
     Get the home page, Login, Read all pages
     '''
