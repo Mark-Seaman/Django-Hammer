@@ -27,7 +27,6 @@ bin/trun
 bin/tshow
 bin/tst
 bin/wiki.py
-bin/wiki.pyc
 test/docs.tst
 test/files.tst
 test/git.tst

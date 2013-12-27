@@ -128,10 +128,7 @@ hammer-wiki.tst
 hammer-write.correct
 hammer-write.tst
 local_settings.py
-page-50-Tricks-Index.correct
-page-index.correct
-page-Index.correct
-page-login.correct
+pages
 pages.correct
 pages.tst
 page_test.py
