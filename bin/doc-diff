@@ -1,0 +1,8 @@
+#!/bin/bash
+# Show differences of docs from another project
+
+[ $# -lt 1 ] && echo 'usage: doc-diff $jack bin/todo' && exit
+
+cd $p
+diff $2 $1/$2
+
