@@ -27,6 +27,7 @@ bin/trun
 bin/tshow
 bin/tst
 bin/wiki.py
+bin/wiki.pyc
 test/docs.tst
 test/files.tst
 test/git.tst
@@ -90,6 +91,7 @@ bin/src-django
 bin/src-jack
 bin/start-server
 bin/t
+bin/tab-view
 bin/tdiff
 bin/te
 bin/tfail
