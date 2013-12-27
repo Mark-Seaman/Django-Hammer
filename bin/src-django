@@ -1,5 +1,7 @@
 #!/bin/bash
 # Django Hammer source code
 
-cd $p
-ls bin/* app/*.py  app/*/*.py test/*.tst 
+cd ~/Projects/django-hammer
+ls bin/* | grep -v '^bin/project$\|bin/Welcome'
+ls app/*.py  app/*/*.py | tee
+ls test/*.tst | tee
