@@ -142,6 +142,55 @@ def do_command(cmd, input=None):
             '<p>INPUT: %s</p>'%input
 
 
+
+def group_tabs(text):
+    results = []
+    groups = text.split('**')
+    for i,g in enumerate(groups):
+        if i%2>0:
+            if i+1<len(groups):
+                results.append(groups[i]+groups[i+1])
+            else:
+                results.append(groups[i])
+    return results
+
+
+def print_tab_text(lines, format_lines):
+    if format_lines:
+        print '           ', convert_html(lines)
+    else:
+        print '           ', '\n'.join(lines)
+
+
+def print_tab(text, format_lines):
+    '''
+    Print one tab of text
+    '''
+    lines = text.split('\n')
+    heading = lines[0]
+    print '     <tab heading="%s">'%heading
+    print '        <div class="page">'
+    #print '        <b>'+heading+'</b>'
+    print_tab_text(lines[1:], format_lines)
+    print '        </div>'
+    print '     </tab>'
+
+
+def print_all_tabs(text, format_lines=True):
+    '''
+    Print all the tabs of text from the file
+    '''
+    tab_groups = group_tabs(text)
+    print convert_html(text.split('**')[0].split('\n'))
+    if len(tab_groups)>1:
+        print '<div ng-controller="TabbedViewCtrl">'
+        print '  <tabset ng-show="true">'
+        for g in tab_groups:
+            print_tab(g, format_lines)
+        print '  </tabset>'
+        print '</div>'
+
+
 def read_text(f):
     '''
     Return the text from the file

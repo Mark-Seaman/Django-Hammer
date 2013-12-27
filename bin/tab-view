@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+# Create a tabbed view of a user document
+
+from sys        import stdin
+from wiki       import print_all_tabs
+
+print_all_tabs(stdin.read(), False)
