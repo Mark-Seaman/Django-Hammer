@@ -1,8 +1,2 @@
-DIFF bin/mkexe:
-18c18
-< e $p/bin/$cmdname
----
-> e $p/bin/$cmdname
-\ No newline at end of file
 DIFF bin/wiki.pyc:
 Binary files bin/wiki.pyc and /home/seaman/Projects/jack-hammer/bin/wiki.pyc differ
