@@ -32,16 +32,6 @@ test/files.tst
 test/git.tst
 
 Django Hammer Source:
-app/doc/__init__.py
-app/doc/models.py
-app/doc/tests.py
-app/doc/views.py
-app/Hammer/__init__.py
-app/Hammer/local_settings.py
-app/Hammer/settings.py
-app/Hammer/urls.py
-app/Hammer/wsgi.py
-app/manage.py
 bin/add-testing
 bin/bash-alias
 bin/bash-prompt
@@ -75,7 +65,6 @@ bin/lc
 bin/mkexe
 bin/mklinks
 bin/page
-bin/project
 bin/promote
 bin/range
 bin/rbg
@@ -105,10 +94,19 @@ bin/trun
 bin/tshow
 bin/tst
 bin/web
-bin/welcome
 bin/wiki.py
 bin/wiki.pyc
 bin/words
+app/doc/__init__.py
+app/doc/models.py
+app/doc/tests.py
+app/doc/views.py
+app/Hammer/__init__.py
+app/Hammer/local_settings.py
+app/Hammer/settings.py
+app/Hammer/urls.py
+app/Hammer/wsgi.py
+app/manage.py
 test/docs.tst
 test/files.tst
 test/git.tst
