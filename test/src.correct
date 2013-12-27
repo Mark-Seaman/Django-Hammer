@@ -2,6 +2,8 @@
 Jack Hammer Source:
 bin/commit
 bin/create
+bin/doc-diff
+bin/doc-diff-all
 bin/doc-pull
 bin/doc-push
 bin/elapsed
@@ -51,6 +53,8 @@ bin/commit
 bin/create
 bin/demote
 bin/deploy
+bin/doc-diff
+bin/doc-diff-all
 bin/doc-pull
 bin/doc-push
 bin/e
@@ -114,3 +118,4 @@ test/hammer-wiki.tst
 test/hammer-write.tst
 test/pages.tst
 test/src.tst
+test/update.tst

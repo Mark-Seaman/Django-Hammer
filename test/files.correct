@@ -137,4 +137,5 @@ pages.tst
 page_test.py
 src.correct
 src.tst
+update.correct
 update.tst

@@ -3,4 +3,4 @@
 
 cd $jack
 ls bin/* | grep -v 'bin/project\|bin/run\|bin/e$\|bin/todo\|hammer-'
-ls test/*.tst | grep -v 'hammer-'
+ls test/*.tst | grep -v 'hammer-\|test/src.tst'
