@@ -31,7 +31,6 @@ bin/wiki.pyc
 test/docs.tst
 test/files.tst
 test/git.tst
-test/src.tst
 
 Django Hammer Source:
 app/doc/__init__.py
