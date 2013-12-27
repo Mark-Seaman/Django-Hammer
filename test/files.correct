@@ -43,6 +43,8 @@ commit
 create
 demote
 deploy
+doc-diff
+doc-diff-all
 doc-pull
 doc-push
 e
@@ -135,3 +137,4 @@ pages.tst
 page_test.py
 src.correct
 src.tst
+update.tst
