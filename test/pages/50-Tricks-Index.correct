@@ -1,0 +1,78 @@
+
+
+Title:Django Hammer
+Django Hammer
+Logged in as, seaman. Log out
+Home    Edit   
+
+Index Of Tricks
+
+
+See also PresentationSlides, Slides
+
+Server
+
+
+     host your web app
+     server start
+     create new project
+     deploy your app
+     url routing
+     create new app
+
+Data
+
+
+     hook up database
+     define new data model
+     create new database
+     insert new record
+     save data record
+     query matching records
+     walk through a list of records
+     delete record
+
+Views
+
+
+     home view
+     list view
+     details view
+     form model
+     add new record
+     edit view
+     delete view
+
+Pages
+
+
+     application template
+     standard appearance
+     standard navigation
+     Java Script support
+
+Users
+
+
+     admin interface
+     user login
+     user registration
+     user password reset
+     user authorization
+
+Files
+
+
+     browse a directory
+     read file
+     write file
+     execute system commands
+
+Documents
+
+
+     static content
+     text to html
+     search text
+     file upload
+     image upload

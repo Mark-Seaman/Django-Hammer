@@ -9,7 +9,8 @@ port = environ['port']
 host = 'localhost:'+port
 
 pages = '''Index
-'''
+50-Tricks/Index
+50-Tricks/HostYourApp'''
 
 system('server-start')
 chdir (join(environ['p'],'test'))

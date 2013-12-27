@@ -2,7 +2,7 @@
 # Run a python script to test support center web pages
 
 from os.path  import join,exists
-from os import system,environ,chdir
+from os import system,environ,chdir,mkdir
 from platform import node
 from subprocess import Popen,PIPE
 from time import sleep
@@ -64,7 +64,9 @@ def page_names(url):
     page=url.replace('/','-')
     if page=='': 
         page='index'
-    page = 'page-'+page
+    if not exists('pages'):
+        mkdir ('pages')
+    page = 'pages/'+page
     #print 'page_names:',  ( page+'.out', page+'.correct')
     return ( page+'.out', page+'.correct')
 
