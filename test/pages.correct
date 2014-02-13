@@ -1,7 +1,7 @@
-Testing Host: localhost:8042
-localhost:8042 Index
+Testing Host: localhost:8043
+localhost:8043 Index
 Testing Index ...
-localhost:8042 50-Tricks/Index
+localhost:8043 50-Tricks/Index
 Testing 50-Tricks/Index ...
-localhost:8042 50-Tricks/HostYourApp
+localhost:8043 50-Tricks/HostYourApp
 Testing 50-Tricks/HostYourApp ...

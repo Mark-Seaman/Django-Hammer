@@ -49,6 +49,7 @@ bin/doc-push
 bin/e
 bin/elapsed
 bin/emacs.conf
+bin/filter-path
 bin/fix-lines
 bin/hammer-add
 bin/hammer-dj-new
