@@ -6,6 +6,8 @@
 cd $p
 for f in `$2`
 do
-    [ ! -z "`diff $f $1/$f`" ] && echo "DIFF $f:" && diff $f $1/$f
+    [ ! -z "`diff $f $1/$f`" ] && 
+    #echo "DIFF $f:" && 
+    echo diff $f $1/$f
 done
 

@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+# Remove all numbers in the output
+
+from sys        import stdin,stdout
+paths = [ '/home/seaman/',  
+          'webapps/django/support/user_doc/', 'doc/' ]
+text = stdin.read()
+for p in paths:
+    text = text.replace(p,'')
+stdout.write(text)

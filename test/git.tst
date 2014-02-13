@@ -2,5 +2,5 @@
 # Test the checked out files
 
 cd $p
-echo $p | sed 's/seaman\/Projects\///'
-git status
+echo $p | filter-path
+git status | grep -v 'nothing to commit'

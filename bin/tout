@@ -2,6 +2,7 @@
 # Show the results from the test that was run
 
 f=${1/\.tst/}
+[ ! -x $f.tst ]  && cd $p/test 
 [ -f $f.out     ] && cat $f.out && exit 0
 [ -f $pt/$f.out ] && cat $f.out && exit 0
 echo "No file found: $f.out"
