@@ -7,6 +7,7 @@ bin/doc-diff-all
 bin/doc-pull
 bin/doc-push
 bin/elapsed
+bin/filter-path
 bin/lc
 bin/mkexe
 bin/range

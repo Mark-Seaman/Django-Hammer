@@ -8,7 +8,7 @@ export pa=$p/app
 export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
-export port=8042
+export port=8043
 
 # Aliases
 alias proot="cd $p"
