@@ -16,6 +16,12 @@ alias papp="cd $pa"
 alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
+alias eapp="e $pa"
+alias ebin="e $pb"
+alias edoc="e $pd"
+alias etest="e $pt"
+alias tres='tresults'
+alias s='search'
 
 # Path
 export PATH=\
@@ -26,13 +32,22 @@ $pt:\
 /bin:\
 ~/bin:\
 .
-
-# Show the banner
-#reset
-figlet 'Django Hammer'
+export _OLD_VIRTUAL_PATH=$PATH
 
 # Directory
 cd $p
+
+# Show the banner
+[ -f "$pb/welcome" ] && cat "$pb/welcome"
+
+# Use virtualenv
+[ 'seaman-chute'  == `hostname` ] &&  . $p/env/bin/activate
+[ 'seaman-hammer' == `hostname` ] &&  . $p/env/bin/activate
+[ 'seaman-ultra'  == `hostname` ] &&  . $p/env/bin/activate
+[ `hostname` == seaman-sws ] && . $HOME/env_2.7/bin/activate
+echo "python = `which python`"
+echo 
+path
 
 # Status
 git status
