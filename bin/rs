@@ -1,0 +1,5 @@
+#!/bin/bash
+# Run django script
+
+cd $pa && ./manage.py runscript  $*
+

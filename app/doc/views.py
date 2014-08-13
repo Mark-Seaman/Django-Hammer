@@ -30,9 +30,9 @@ def missing(request,title):
     text = format_doc('MissingFile')
     template = doc_template(join(user(request),title))
     href = "%s/%s/add" % (title,template)
-    return redirect(href)
-    #link = '<a href="/%s">%s</a>' % (href,title)
-    #return render(request, 'doc.html', {'title': title, 'text': text%link })
+    # return redirect(href)
+    link = '<a href="/%s">%s</a>' % (href,title)
+    return render(request, 'doc.html', {'title': title, 'text': text%link })
 
 
 def redirect(title):
