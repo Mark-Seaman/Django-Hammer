@@ -10,6 +10,7 @@
 .bash_history
 Git
 app.log
+env
 hammer.db
 lib
 lib-cov
